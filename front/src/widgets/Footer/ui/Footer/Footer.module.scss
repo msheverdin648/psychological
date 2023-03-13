@@ -1,0 +1,23 @@
+.footer {
+    background: var(--color-d-gray);
+    padding: 35px 0 90px 0;
+}
+
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    margin-bottom: 20px;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
