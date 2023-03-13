@@ -6,4 +6,21 @@
 
 .app {
     font-family: var(--font-family-main);
+    min-height: 100vh;
+}
+
+.content-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.page-wrapper {
+    flex-grow: 1;
 }

@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Loader } from 'shared/ui/Loader/Loader';
 import { Footer } from 'widgets/Footer';
 import { Header } from 'widgets/Header';
 import { Navigate } from 'widgets/Navigate/ui/Navigate';
@@ -9,10 +10,12 @@ import './styles/index.scss'
 function App() {
     return (
         <div className={classNames('app', {}, [])}>
-            <Suspense fallback="">
+            <Suspense fallback={<Loader/>}>
                 <div className="content-page">
-                    <Header />
-                    <Navigate />
+                    <div>
+                        <Header />
+                        <Navigate />
+                    </div>
                     <AppRouter />
                     <Footer />
                 </div>

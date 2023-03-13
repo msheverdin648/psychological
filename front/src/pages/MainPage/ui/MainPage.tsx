@@ -10,6 +10,9 @@ const MainPage: React.FC<MainPageProps> = (props) => {
 
     return (
         <div className={classNames(cls.mainPage, {}, [className ?? ''])}>
+            <div className="container">
+                Главная страница
+            </div>
         </div>
     );
 }

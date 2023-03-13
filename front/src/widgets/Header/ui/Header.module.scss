@@ -1,0 +1,17 @@
+
+
+.header {
+    padding: 40px 0;
+    
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    font: var(--font-l);
+    color: #000;   
+}

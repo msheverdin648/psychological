@@ -10,7 +10,9 @@ export const Footer: React.FC<FooterProps> = (props) => {
 
     return (
         <footer className={classNames(cls.footer, {}, [className ?? ''])}>
-            
+            <div className="container">
+                Footer
+            </div>
         </footer>
     );
 }
