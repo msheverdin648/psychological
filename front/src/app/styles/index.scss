@@ -1,0 +1,9 @@
+@import-normalize; /* bring in normalize.css styles */
+@import 'reset.scss';
+@import 'fonts.scss';
+@import 'variables/global.scss';
+
+
+.app {
+    font-family: var(--font-family-main);
+}
