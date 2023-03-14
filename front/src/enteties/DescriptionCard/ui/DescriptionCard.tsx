@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { IDescriptionCard } from '../types';
+import { IDescriptionCard } from '../models/types';
 import cls from './DescriptionCard.module.scss';
 
 

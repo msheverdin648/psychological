@@ -1,6 +1,5 @@
-import { ReactNode } from "react";
-import { DescriptionCardThemes } from "./ui/DescriptionCard";
-
+import { ReactNode } from 'react';
+import { DescriptionCardThemes } from "../ui/DescriptionCard";
 
 export interface IDescriptionCard {
     icon: ReactNode;

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DescriptionCard } from 'widgets/DescriptionCard';
-import { IDescriptionCard, IDescriptionState } from 'widgets/DescriptionCard/types';
 import cls from './CardsBlock.module.scss';
 
 import { ReactComponent as Icon_1  } from 'shared/assets/img/icons/descriptionCard_1.svg'
@@ -11,7 +9,8 @@ import { ReactComponent as Icon_4  } from 'shared/assets/img/icons/descriptionCa
 import { ReactComponent as Icon_5  } from 'shared/assets/img/icons/descriptionCard_5.svg'
 import { ReactComponent as Icon_6  } from 'shared/assets/img/icons/descriptionCard_6.svg'
 import { ReactComponent as Icon_7  } from 'shared/assets/img/icons/descriptionCard_7.svg'
-import { DescriptionCardThemes } from 'widgets/DescriptionCard/ui/DescriptionCard';
+import { DescriptionCard, DescriptionCardThemes } from 'enteties/DescriptionCard/ui/DescriptionCard';
+import { IDescriptionState } from 'enteties/DescriptionCard';
 
 
 interface CardsBlockProps {
@@ -21,7 +20,7 @@ interface CardsBlockProps {
 export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
     const { className } = props;
 
-    const [ cards, setCards ] = useState<IDescriptionState[]>([
+    const [ cards ] = useState<IDescriptionState[]>([
         {
             card: {
                 icon: <Icon_1 />,
