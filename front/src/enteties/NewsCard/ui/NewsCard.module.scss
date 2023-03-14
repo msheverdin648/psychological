@@ -1,0 +1,50 @@
+
+
+.newsCard {
+    padding: 40px 16px 20px 16px;
+    border-radius: 24px;
+    background: var(--color-l-blue);   
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.img {
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.title {
+    font: var(--font-l);
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.date {
+    font-size: 12px;
+    font-family: 'Stolzl';
+    font-weight: 400;
+    margin-left: 20px ;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+
+.link {
+    margin-left: auto;
+    text-decoration: none;
+    font: var(--font-m);
+    color: var(--color-blue);
+    font-weight: 700;
+
+}
