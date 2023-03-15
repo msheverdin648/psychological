@@ -1,0 +1,86 @@
+
+
+
+
+
+.companyForm {
+    display: flex;
+    max-width: 1069px;
+    margin: 0 auto;
+    border: 1px solid rgba(228, 228, 228, 0.8);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.03);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.imageBlock {
+    display: block;
+    flex: 0 0 42%;
+    background: url('../../../shared/assets/img/form_bg.png') center no-repeat;
+    background-size: cover;
+}
+
+.contentBlock {
+    padding: 50px 76px 30px 100px;
+}
+
+.title {
+    font-family: var(--font-family-main);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+
+    color: #000000;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin: 32px 0 24px 0;
+    
+}
+
+.listItem {
+    font: var(--font-m);
+    list-style-type: disc;
+    list-style: disc;
+}
+
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.input:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.radios {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.radiosTitle {
+    font: var(--font-l);
+    color: var(--color-blue);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.radio {
+    margin-bottom: 16px;
+}
+
+.policy {
+    font: var(--font-m);
+    display: block;
+    margin-top: 24px;
+}
+
+.policy a:hover {
+    color: var(--color-blue);
+}

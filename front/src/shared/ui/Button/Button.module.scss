@@ -25,3 +25,7 @@
 .blue {
     background: var(--color-blue);
 }
+
+.blue:hover {
+    background: darken($color: #4288BD, $amount: 5);
+}

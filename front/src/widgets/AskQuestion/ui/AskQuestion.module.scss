@@ -1,0 +1,47 @@
+
+
+.askQuestion {
+    padding: 163px 0 107px 0;
+}
+
+
+.content {
+    display: flex;
+}
+
+.infoBlock {
+    padding: 79px 0 0 66px;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 36px;
+}
+
+.title {
+    font: var(--font-xl);
+    font-weight: 700;
+    margin-top: 36px;
+    margin-bottom: 8px;
+}
+
+.text {
+    font: var(--font-m);
+    margin-bottom: 24px;
+}
+
+.social {
+    display: flex;
+    margin-bottom: 24px;
+    align-items: center;
+    font: var(--font-m);
+}
+
+.phone {
+    font: var(--font-l);
+    font-size: 28px;
+}
+
+.socialIcon {
+    margin-right: 22px;
+}

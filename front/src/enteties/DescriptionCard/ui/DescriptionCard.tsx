@@ -12,7 +12,9 @@ interface DescriptionCardProps {
 
 export const enum DescriptionCardThemes {
     FILL='fill',
-    BORDERED='bordered'
+    CLEAR='clear',
+    BORDERED='bordered',
+    BORDERED_BLUE='bordered_blue'
 }
 
 export const DescriptionCard: React.FC<DescriptionCardProps> = (props) => {
@@ -28,7 +30,9 @@ export const DescriptionCard: React.FC<DescriptionCardProps> = (props) => {
                 {card.icon}
             </div>
             <h3 className={classNames(cls.title, {}, [className ?? '', cls[theme]])}>{card.title}</h3>
-            <p className={classNames(cls.text, {}, [className ?? '', cls[theme]])}>{card.text}</p>
+            {
+                card.text ? <p className={classNames(cls.text, {}, [className ?? '', cls[theme]])}>{card.text}</p> : null
+            }
         </div>
     );
 }

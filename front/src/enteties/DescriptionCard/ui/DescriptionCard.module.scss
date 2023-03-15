@@ -17,6 +17,9 @@
 .descriptionCard.bordered {
     border: 1px solid #fff;
 }
+.descriptionCard.bordered_blue {
+    border: 1px solid var(--color-blue);
+}
 
 .icon.fill svg {
     fill: #fff;
@@ -34,6 +37,10 @@
 .icon.bordered {
     fill: var(--color-blue);
     background: #fff;
+}
+.icon.bordered_blue {
+    background: #fff;
+    border: none
 }
 
 .icon {
@@ -58,6 +65,12 @@
 .text.bordered {
     color: #fff
 }
+
+.title.bordered_blue,
+.text.bordered_blue {
+    color: #000;
+}
+
 
 .text {
     font: var(--font-m);

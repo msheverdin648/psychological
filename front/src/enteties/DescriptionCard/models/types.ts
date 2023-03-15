@@ -5,7 +5,7 @@ import { DescriptionCardThemes } from "../ui/DescriptionCard";
 export interface IDescriptionCard {
     icon: ReactNode;
     title: string;
-    text: string;   
+    text?: string;   
 }
 
 export interface IDescriptionState{
