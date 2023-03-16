@@ -1,0 +1,25 @@
+
+
+.howItWorks {
+    padding: 73px 0 132px 0;
+    margin: 100px 0;
+    background: url('../../../shared/assets/img/dashed_wave.svg') center no-repeat;
+    background-color: var(--color-d-gray);
+    background-position: 55% 59%;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+}
+
+.title {
+    font: var(--font-xl);
+    margin-bottom: 94px;
+}

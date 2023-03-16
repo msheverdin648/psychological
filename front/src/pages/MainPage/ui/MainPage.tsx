@@ -5,6 +5,7 @@ import { BuisnesDescriptionBlock } from 'widgets/BuisnesDescriptionBlock/ui/Buis
 import { CardsBlock } from 'widgets/CardsBlock';
 import { CheckBlock } from 'widgets/CheckBlock/ui/CheckBlock';
 import { CompanyForm } from 'widgets/CompanyForm/ui/CompanyForm';
+import { HowItWorks } from 'widgets/HowItWork';
 import { NewsBlock } from 'widgets/NewsBlock';
 import { Tariffs } from 'widgets/Tariffs';
 import cls from './MainPage.module.scss';
@@ -22,6 +23,8 @@ const MainPage: React.FC<MainPageProps> = (props) => {
             <Banner />
             <BuisnesDescriptionBlock />
             <CheckBlock />
+            <HowItWorks />
+            
             <CompanyForm />
             <Tariffs />
             <NewsBlock />
