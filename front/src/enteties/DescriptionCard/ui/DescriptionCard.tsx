@@ -29,9 +29,11 @@ export const DescriptionCard: React.FC<DescriptionCardProps> = (props) => {
             <div className={classNames(cls.icon, {}, [className ?? '', cls[theme]])}>
                 {card.icon}
             </div>
-            <h3 className={classNames(cls.title, {}, [className ?? '', cls[theme]])}>{card.title}</h3>
             {
-                card.text ? <p className={classNames(cls.text, {}, [className ?? '', cls[theme]])}>{card.text}</p> : null
+                card.title && <h3 className={classNames(cls.title, {}, [className ?? '', cls[theme]])}>{card.title}</h3>
+            }
+            {
+                card.text && <p className={classNames(cls.text, {}, [className ?? '', cls[theme]])}>{card.text}</p>
             }
         </div>
     );
