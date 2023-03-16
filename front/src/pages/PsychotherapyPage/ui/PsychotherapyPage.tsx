@@ -5,6 +5,7 @@ import cls from './PsychotherapyPage.module.scss';
 import banner from 'shared/assets/img/banner-2.jpg'
 import { Banner } from 'widgets/Banner';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { AboutConsultationBlock } from 'widgets/AboutConsultationBlock';
 
 interface PsychotherapyPageProps {
     className?: string;
@@ -16,6 +17,7 @@ const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
     return (
         <div className={classNames(cls.psychotherapyPage, {}, [className ?? ''])}>
             <CanHelpBlock />
+            <AboutConsultationBlock />
             <Banner photo={banner} color={'rgba(66, 136, 189, 0.85)'}>
                 <h2 className={cls.title}>
                     Дарите заботу <br /> близким
@@ -26,7 +28,8 @@ const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
                 <Button theme={ButtonTheme.GREEN} className={cls.button}>
                     Заказать сертификат
                 </Button>
-            </Banner><AskQuestion />
+            </Banner>
+            <AskQuestion />
         </div>
 
     );

@@ -1,0 +1,21 @@
+
+.aboutConsultationBlock {
+    padding: 100px 0 0 0;
+}
+
+.title {
+    font: var(--font-xl);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 68px;
+}
+
+.list {
+    width: 50%;
+    align-self: flex-end;
+}
+
+.listItem {
+    margin-bottom: 15px;
+    font: var(--font-m);
+}
