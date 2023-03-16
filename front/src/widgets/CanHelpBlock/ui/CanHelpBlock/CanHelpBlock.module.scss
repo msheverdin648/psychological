@@ -1,0 +1,119 @@
+
+.canHelpBlock {
+    padding: 54px 0 155px 0;
+}
+
+
+.title {
+    font: var(--font-xl);
+    margin-bottom: 53px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.circle {
+    display: block;
+    width: 514px;
+    height: 514px;
+    border-radius: 100%;
+}
+
+
+.circles {
+    display: flex;
+}
+
+.firstCircle {
+    position: relative;
+    z-index: 2;
+    background: rgba(#878787, 0.1);
+    transform: translateX(15%);
+}
+
+.firstCircle{
+    &>.card{
+        position: absolute;
+        z-index: 5;
+    }
+    &>.card:nth-child(1) {
+        position: absolute;
+        top: 0;
+        right: 10%;
+    }
+    &>.card:nth-child(2) {
+        position: absolute;
+        top: 20%;
+        left: -10%;
+    }
+    &>.card:nth-child(3) {
+        position: absolute;
+        top: 50%;
+        left: -20%;
+    }
+    &>.card:nth-child(4) {
+        position: absolute;
+        top: 75%;
+        left: -10%;
+    }
+    &>.card:nth-child(5) {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 100%;
+        left: 30%;
+    }
+    &>.card:nth-child(6) {
+        position: absolute;
+        top: 65%;
+        left: -10%;
+        transform: translateX(120%);
+    }
+    &>.card:nth-child(7) {
+        position: absolute;
+        top: 35%;
+        left: -10%;
+        transform: translateX(150%);
+    }
+}
+
+.secondCircle {
+    background: var(--color-l-green);
+    transform: translate(-15%, 10%);
+}
+
+.secondCircle{
+    &>.card:nth-child(1) {
+        position: absolute;
+        top: 0;
+        right: 10%;
+    }
+    &>.card:nth-child(2) {
+        position: absolute;
+        top: 20%;
+        left: 70%;
+    }
+    &>.card:nth-child(3) {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translateX(320px);
+    }
+    &>.card:nth-child(4) {
+        position: absolute;
+        top: 75%;
+        left: 0%;
+        transform: translateX(320px);
+    }
+    &>.card:nth-child(5) {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 100%;
+        left: 30%;
+    }
+}
+
+
