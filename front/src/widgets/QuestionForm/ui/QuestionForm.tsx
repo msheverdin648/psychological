@@ -12,7 +12,7 @@ export const QuestionForm: React.FC<QuestionFormProps> = (props) => {
     const { className } = props;
 
     return (
-        <div className={classNames(cls.questionForm, {}, [className ?? '' ])}>
+        <div className={classNames(cls.questionForm, {}, [className ?? '' ])} id="Q_A">
             <h2 className={cls.title}>
                 Задать вопрос
             </h2>

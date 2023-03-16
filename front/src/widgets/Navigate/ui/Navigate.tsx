@@ -19,7 +19,7 @@ export const Navigate: React.FC<NavigateProps> = (props) => {
                     <CustomLink to='#services'>Все услуги</CustomLink>
                     <CustomLink to='#certificates'>Подарочные сертификаты </CustomLink>
                     <CustomLink to='#contacts'>Контакты</CustomLink>
-                    <CustomLink to='#Q&A'>Вопросы и ответы</CustomLink>
+                    <CustomLink to='#Q_A'>Вопросы и ответы</CustomLink>
                 </div>
             </div>
         </nav>

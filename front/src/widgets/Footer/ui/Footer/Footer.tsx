@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <div className={cls.column}>
                         <CustomLink className={cls.link} to="#certificates">Подарочные сертификаты</CustomLink>
                         <CustomLink className={cls.link} to="#contacts">Контакты</CustomLink>
-                        <CustomLink className={cls.link} to="#Q&A">Вопросы и ответы</CustomLink>
+                        <CustomLink className={cls.link} to="#Q_A">Вопросы и ответы</CustomLink>
                     </div>
 
                     <div className={cls.column}>

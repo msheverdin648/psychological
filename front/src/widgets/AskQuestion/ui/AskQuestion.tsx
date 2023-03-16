@@ -15,11 +15,11 @@ export const AskQuestion: React.FC<AskQuestionProps> = (props) => {
     const { className } = props;
 
     return (
-        <div className={classNames(cls.askQuestion, {}, [className ?? '' ])}>
+        <div className={classNames(cls.askQuestion, {}, [className ?? '' ])} >
             <div className="container">
                 <div className={cls.content}>
                     <QuestionForm />
-                    <div className={cls.infoBlock}>
+                    <div className={cls.infoBlock} id="contacts">
                         <span className={cls.icon}>🔔</span>
                         <h3 className={cls.title}>Контакты</h3>
                         <p className={cls.text}>

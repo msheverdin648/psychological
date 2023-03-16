@@ -2,7 +2,7 @@ import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Header.module.scss'
 import {ReactComponent as Logo} from 'shared/assets/img/icons/logo.svg'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 interface HeaderProps {

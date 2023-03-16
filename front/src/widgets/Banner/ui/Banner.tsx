@@ -1,26 +1,35 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './Banner.module.scss';
+import { ReactNode } from 'react';
+
+
 
 interface BannerProps {
     className?: string;
+    photo?: string;
+    color?: string;
+    children: ReactNode;
 }
 
 export const Banner: React.FC<BannerProps> = (props) => {
-    const { className } = props;
+    const { 
+        className,
+        photo,
+        color,
+        children
+    } = props;
+
 
     return (
-        <div className={classNames(cls.banner, {}, [className ?? '' ])}>
+        <div className={classNames(cls.banner, {}, [className ?? '' ])} style={
+            { 
+                backgroundImage: photo ? `url(${photo})` : `none`,
+                backgroundColor: color ? color : 'none',
+            }
+        }>
             <div className="container">
                 <div className={cls.content}>
-                    <h2 className={cls.title} >
-                        Инвестируйте в психологическое
-                        здоровье сотрудников, и они впечатлят
-                        вас результатом
-                    </h2>
-                    <Button theme={ButtonTheme.BLUE} className={cls.button}>
-                        Оставить заявку
-                    </Button>
+                    {children}
                 </div>
             </div>
         </div>
