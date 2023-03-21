@@ -7,6 +7,8 @@ import { Banner } from 'widgets/Banner';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { AboutConsultationBlock } from 'widgets/AboutConsultationBlock';
 import { RegularSessionsBlock } from 'widgets/RegularSessionsBlock';
+import { ChangeNowBlock } from 'widgets/ChangeNowBlock';
+import { ServicesBlock } from 'widgets/ServicesBlock';
 
 interface PsychotherapyPageProps {
     className?: string;
@@ -18,6 +20,8 @@ const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
     return (
         <div className={classNames(cls.psychotherapyPage, {}, [className ?? ''])}>
             <CanHelpBlock />
+            <ServicesBlock />
+            <ChangeNowBlock />
             <AboutConsultationBlock />
             <RegularSessionsBlock />
             <Banner photo={banner} color={'rgba(66, 136, 189, 0.85)'}>

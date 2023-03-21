@@ -1,0 +1,23 @@
+.familyService {
+    display: flex;
+}
+
+
+.listTitle, .listItem {
+    font: var(--font-m);
+}
+
+.listTitle {
+    color: var(--color-green);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.list {
+    margin-bottom: 35px;
+    padding-left: 30px;
+}
+
+.listItem {
+    list-style-type: disc;
+}

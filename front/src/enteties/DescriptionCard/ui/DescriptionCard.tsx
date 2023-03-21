@@ -14,7 +14,8 @@ export const enum DescriptionCardThemes {
     FILL='fill',
     CLEAR='clear',
     BORDERED='bordered',
-    BORDERED_BLUE='bordered_blue'
+    BORDERED_BLUE='bordered_blue',
+    FILL_WITHOUT_ICON='fill_without_icon'
 }
 
 export const DescriptionCard: React.FC<DescriptionCardProps> = (props) => {

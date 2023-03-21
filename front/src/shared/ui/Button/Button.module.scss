@@ -22,10 +22,14 @@
     background: darken($color: #2CBB77, $amount: 3);
 }
 
-.blue {
+.blue, .blue_bordered {
     background: var(--color-blue);
 }
 
-.blue:hover {
+.blue_bordered {
+    border: 1px solid #fff;
+}
+
+.blue:hover, .blue_bordered:hover {
     background: darken($color: #4288BD, $amount: 5);
 }

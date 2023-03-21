@@ -1,10 +1,9 @@
 import React, { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { routeConfig } from 'shared/config/RouteConfig/routeConfig'
+import { routeConfig } from 'shared/config/RouteConfig/appRouteConfig'
 
 export const AppRouter = () => {
     return (
-        // <Suspense >
         <Routes>
             {Object.values(routeConfig).map(({path, element}) => (
                 <Route key={path} path={path} element={(
@@ -14,6 +13,5 @@ export const AppRouter = () => {
                 )} />
             ))}
         </Routes>
-        // </Suspense>
     )
 }

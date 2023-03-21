@@ -1,0 +1,17 @@
+.serviceNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link {
+    padding: 0 36px;
+    flex: 0 1 33%;
+    text-align: center;    
+    font-weight: 500;
+
+}
+
+.link:not(:last-child) {
+    border-right: 2px solid #000;
+}

@@ -1,0 +1,13 @@
+
+
+.servicesNavLink {
+    font: var(--font-l);
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+.servicesNavLink:hover, .active {
+    color: var(--color-green);
+}
+
