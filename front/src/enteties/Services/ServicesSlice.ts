@@ -1,7 +1,7 @@
 import { VisitService } from 'widgets/ServicesBlock/ui/VisitService/VisitService';
 import { OnlineService } from 'widgets/ServicesBlock/ui/OnlineService/OnlineService';
 import { FamilyService } from 'widgets/ServicesBlock/ui/FamilyService/FamilyService';
-import { ServiceState, IService } from './models/types';
+import { ServiceState } from './models/types';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -60,10 +60,14 @@ export const ServicesSlice = createSlice({
     }
 })  
 
+const servicesPersistConfig = {
+    key: 'service',
+    storage,
+}
 
+const persistedReduser = persistReducer(servicesPersistConfig, ServicesSlice.reducer)
 
-
-export default ServicesSlice.reducer;
+export default persistedReduser;
 
 
 

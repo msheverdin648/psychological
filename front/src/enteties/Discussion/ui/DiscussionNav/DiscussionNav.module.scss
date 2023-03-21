@@ -1,0 +1,45 @@
+.discussionNav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 50px;
+}
+
+.prevArrow {
+    transform: rotate(180deg);
+    margin-right: 35px;
+}
+
+
+
+.arrow {
+    fill: var(--color-green);
+    cursor: pointer;
+}
+
+.arrow:not(.unactive):hover {
+    fill: darken(#2cbb77, 4);
+}
+
+.pages {
+    font: var(--font-l);
+    font-weight: 500;
+    margin-right: 40px;
+}
+
+.totalPages {
+    color: #000;
+    opacity: 0.5;
+    margin-left: 6px;
+}
+
+.curPage {
+    margin-right: 6px;
+}
+
+.unactive{
+    fill: var(--color-green);
+    opacity: 0.4;
+
+}

@@ -1,4 +1,4 @@
-import ServicesReduser  from '../../enteties/Services/ServicesSlice';
+import ServicesReduser  from 'enteties/Services/ServicesSlice';
 import { combineReducers, configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
 import {
     persistStore,
@@ -11,9 +11,11 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { DiscussionReducer} from 'enteties/Discussion'
 
 const rootReducer = combineReducers({
-    services: ServicesReduser
+    ServicesReduser,
+    DiscussionReducer
 })
 
 
@@ -26,10 +28,9 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 
-
-export const setupStore = () => {
+const setupStore = () => {
     return configureStore({
-        reducer: persistedReducer,
+        reducer: rootReducer,
         middleware: (getDefaultMiddleware: any) => 
             getDefaultMiddleware({
                 serializableCheck: {
@@ -39,9 +40,11 @@ export const setupStore = () => {
     })
 }  
 
+export const store = setupStore()
+
 
 export type RootState = ReturnType<typeof rootReducer>  
 export type AppStore = ReturnType<typeof setupStore>  
 export type AppDispatch = AppStore['dispatch']  
-export const persistor = persistStore(setupStore())
+export const persistor = persistStore(store)
 

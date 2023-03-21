@@ -9,7 +9,7 @@ import { Navigate } from 'widgets/Navigate/ui/Navigate';
 import { PageLoader } from 'widgets/PageLoader';
 import { ScrollToAnchor } from './lib/scrollToAnchor';
 import { AppRouter } from './router';
-import { persistor, setupStore } from './store/store';
+import { persistor, store } from './store/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import './styles/index.scss'
 
@@ -29,7 +29,7 @@ function App() {
 
     return (
         <div className={classNames('app', {}, [])}>
-            <Provider store={setupStore()}>
+            <Provider store={store}>
                 <PersistGate loading={null} persistor={persistor}>
                     <Suspense fallback={<PageLoader/>}>
                         <div className="content-page">

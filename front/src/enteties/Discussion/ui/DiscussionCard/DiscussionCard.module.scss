@@ -1,0 +1,25 @@
+
+
+.discussionCard {
+    font: var(--font-m);
+    background: #FFFFFF;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.03);
+    border-radius: 24px;
+    padding: 22px 50px;
+    margin: 0 20px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.discussionCard:hover {
+    background: darken($color: #fff, $amount: 1);
+}
+
+.active {
+    border: 1px solid var(--color-blue);
+    color: var(--color-blue);
+}
+
+.active:hover {
+    border: 1px solid #c2dbee;
+}

@@ -9,6 +9,7 @@ import { AboutConsultationBlock } from 'widgets/AboutConsultationBlock';
 import { RegularSessionsBlock } from 'widgets/RegularSessionsBlock';
 import { ChangeNowBlock } from 'widgets/ChangeNowBlock';
 import { ServicesBlock } from 'widgets/ServicesBlock';
+import { Discussion } from 'enteties/Discussion';
 
 interface PsychotherapyPageProps {
     className?: string;
@@ -20,6 +21,7 @@ const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
     return (
         <div className={classNames(cls.psychotherapyPage, {}, [className ?? ''])}>
             <CanHelpBlock />
+            <Discussion />
             <ServicesBlock />
             <ChangeNowBlock />
             <AboutConsultationBlock />

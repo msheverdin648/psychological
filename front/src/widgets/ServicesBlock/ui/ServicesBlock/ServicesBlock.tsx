@@ -11,7 +11,7 @@ interface ServicesBlockProps {
 export const ServicesBlock: React.FC<ServicesBlockProps> = (props) => {
     const { className } = props;
 
-    const { services, activeService } = useAppSelector(state => state.services)
+    const { services, activeService } = useAppSelector(state => state.ServicesReduser)
 
 
     return (

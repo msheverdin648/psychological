@@ -1,0 +1,24 @@
+
+.discussionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font: var(--font-xl);
+    margin-bottom: 16px;
+}
+
+.subTitle {
+    font: var(--font-l);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--color-blue);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
