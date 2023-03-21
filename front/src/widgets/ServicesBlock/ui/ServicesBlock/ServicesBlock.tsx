@@ -1,3 +1,4 @@
+import { ServiceBlocks } from 'enteties/Services/ServicesSlice';
 import { useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ServiceNav } from '../ServicesNav/ServiceNav';
@@ -10,7 +11,7 @@ interface ServicesBlockProps {
 export const ServicesBlock: React.FC<ServicesBlockProps> = (props) => {
     const { className } = props;
 
-    const { services, activeService } = useAppSelector(state => state.ServicesReduser)
+    const { services, activeService } = useAppSelector(state => state.services)
 
 
     return (
@@ -21,7 +22,7 @@ export const ServicesBlock: React.FC<ServicesBlockProps> = (props) => {
                     <ServiceNav className={cls.nav} />
                     <>
                         {
-                            <activeService.block/>
+                            ServiceBlocks[activeService.name]({})
                         }
                     </>
                 </div>

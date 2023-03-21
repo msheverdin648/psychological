@@ -12,7 +12,7 @@ interface ServiceNavProps {
 export const ServiceNav: React.FC<ServiceNavProps> = (props) => {
     const { className } = props;
 
-    const { services, activeService } = useAppSelector(state => state.ServicesReduser)
+    const { services, activeService } = useAppSelector(state => state.services)
     const dispatch = useAppDispatch()
 
     function changeBlockHandler(name: string) {

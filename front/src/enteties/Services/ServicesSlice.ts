@@ -1,8 +1,12 @@
-import { VisitService } from './../../widgets/ServicesBlock/ui/VisitService/VisitService';
+import { VisitService } from 'widgets/ServicesBlock/ui/VisitService/VisitService';
 import { OnlineService } from 'widgets/ServicesBlock/ui/OnlineService/OnlineService';
 import { FamilyService } from 'widgets/ServicesBlock/ui/FamilyService/FamilyService';
 import { ServiceState, IService } from './models/types';
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { FC } from 'react';
+
 
 
 
@@ -12,31 +16,32 @@ export const enum ServiceBlockNames {
     VISIT='visit'
 }
 
+export const  ServiceBlocks: Record<ServiceBlockNames, FC> = {
+    [ServiceBlockNames.ONLINE]: OnlineService,
+    [ServiceBlockNames.FAMILY]: FamilyService,
+    [ServiceBlockNames.VISIT]: VisitService
+}
+
 
 const initialState: ServiceState = {
     services: [
         {
             name: ServiceBlockNames.ONLINE,
-            block: OnlineService,
             title: 'Онлайн - психоаналитический психотерапевт'
 
         },
         {
             name: ServiceBlockNames.FAMILY,
-            block: FamilyService,
             title: 'Семейный психоаналитический психотерапевт'
         },
         {
             name: ServiceBlockNames.VISIT,
-            block: VisitService,
             title: 'Визит к Психоаналитическому психотерапевту'
         },
         
     ],
     activeService: {
         name: ServiceBlockNames.FAMILY,
-        block: FamilyService,
-        title: 'Семейный психоаналитический психотерапевт'
     }
 }
 
@@ -54,6 +59,9 @@ export const ServicesSlice = createSlice({
         }
     }
 })  
+
+
+
 
 export default ServicesSlice.reducer;
 
