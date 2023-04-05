@@ -1,4 +1,5 @@
 from rest_framework import generics
+from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 from .models import (
     Day,
