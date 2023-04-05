@@ -3,9 +3,7 @@ import cls from './ChoseDiscussionDate.module.scss';
 import { DiscussionNav } from '../DiscussionNav/DiscussionNav';
 import { useAppDispatch, useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { DiscussionSlice } from 'enteties/Discussion/redux/DiscussionSlice';
-import { time } from 'console';
 import { discussionDateApi } from 'enteties/Discussion/api/DiscussionDateApi';
-import { useEffect } from 'react';
 
 interface ChoseDiscussionDateProps {
     className?: string;
@@ -14,14 +12,10 @@ interface ChoseDiscussionDateProps {
 export const ChoseDiscussionDate: React.FC<ChoseDiscussionDateProps> = (props) => {
     const { className } = props;
 
-    const { data, status } = discussionDateApi.useFetchAvailableDatesQuery('')
+    const { data } = discussionDateApi.useFetchAvailableDatesQuery('')
     const { time_slot } = useAppSelector(state => state.DiscussionReducer)
     const dispatch = useAppDispatch()
 
-    useEffect(()=>{
-        console.log(data)
-        console.log(status)
-    }, [status])
 
     return (
         <div className={classNames(cls.choseDiscussionDate, {}, [className ?? '' ])}>
