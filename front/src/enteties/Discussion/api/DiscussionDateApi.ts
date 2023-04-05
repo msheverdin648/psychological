@@ -6,8 +6,8 @@ import { IAppointment, ITimeSlot } from '../models/types'
 export const discussionDateApi =  createApi({
     reducerPath: 'discussionDateApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:8000/api/v1'
-        // baseUrl: 'https://api.scr-broker.ru/api/v1'
+        // baseUrl: 'http://localhost:8000/api/v1'
+        baseUrl: 'http://116.202.233.248/api/v1'
     }),
     endpoints: (build) => ({
         fetchAvailableDates: build.query<ITimeSlot[], any>({

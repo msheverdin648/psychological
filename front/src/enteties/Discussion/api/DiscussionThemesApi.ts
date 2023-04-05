@@ -6,8 +6,8 @@ import { IDiscussionThemes } from '../models/types'
 export const discussionThemesApi =  createApi({
     reducerPath: 'discussionThemesApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:8000/api/v1'
-        // baseUrl: 'https://api.scr-broker.ru/api/v1'
+        // baseUrl: 'http://localhost:8000/api/v1'
+        baseUrl: 'http://116.202.233.248/api/v1'
     }),
     endpoints: (build) => ({
         fetchAvailableThemes: build.query<IDiscussionThemes[], any>({
