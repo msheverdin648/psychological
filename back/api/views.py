@@ -41,16 +41,17 @@ class AvailableTimeSlotList(generics.ListAPIView):
 
         return available_time_slots
 
-@csrf_exempt
 class AppointmentView(generics.ListCreateAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
+    csrf_exempt = True
+    
 
     
-@csrf_exempt
 class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentDetailSerializer
+    csrf_exempt = True
 
 
 class DiscussionThemesView(generics.ListCreateAPIView):
