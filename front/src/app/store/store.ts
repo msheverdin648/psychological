@@ -11,11 +11,15 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { DiscussionReducer} from 'enteties/Discussion'
+import { DiscussionReducer, DiscussionThemesReducer, DiscussionDateReducer, discussionDateApi, discussionThemesApi} from 'enteties/Discussion'
 
 const rootReducer = combineReducers({
     ServicesReduser,
-    DiscussionReducer
+    DiscussionReducer,
+    DiscussionThemesReducer,
+    DiscussionDateReducer,
+    [discussionDateApi.reducerPath]: discussionDateApi.reducer,
+    [discussionThemesApi.reducerPath]: discussionThemesApi.reducer
 })
 
 
@@ -37,6 +41,8 @@ const setupStore = () => {
                     ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
                 },
             })
+                .concat(discussionDateApi.middleware)
+                .concat(discussionThemesApi.middleware)
     })
 }  
 

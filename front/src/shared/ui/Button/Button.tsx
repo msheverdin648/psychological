@@ -12,6 +12,7 @@ export const enum ButtonTheme {
     BLUE = 'blue',
     WHITE = 'white',
     BLUE_BORDERED = 'blue_bordered',
+    BORDERED = 'bordered',
 
 } 
 

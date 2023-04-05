@@ -24,5 +24,14 @@
 /front/yarn-debug.log*
 /front/yarn-error.log*
 
+db.sqlite3
+
+**/migrations/*.py
+**/__pycache__
 
 venv
+
+deploy.txt
+
+**/dev_settings.py
+**/prod_settings.py

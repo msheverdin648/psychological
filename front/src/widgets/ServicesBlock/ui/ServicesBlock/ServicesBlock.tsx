@@ -15,7 +15,7 @@ export const ServicesBlock: React.FC<ServicesBlockProps> = (props) => {
 
 
     return (
-        <div className={classNames(cls.servicesBlock, {}, [className ?? '' ])}>
+        <div className={classNames(cls.servicesBlock, {}, [className ?? '' ])} id={'services'}>
             <div className="container">
                 <div className={cls.content}>
                     <h2 className={cls.title}>Все услуги</h2>

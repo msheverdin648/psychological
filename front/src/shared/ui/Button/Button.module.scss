@@ -33,3 +33,14 @@
 .blue:hover, .blue_bordered:hover {
     background: darken($color: #4288BD, $amount: 5);
 }
+
+.bordered {
+    background: transparent;
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+}
+
+.bordered:hover {
+    background: var(--color-blue);
+    color: #fff;
+}

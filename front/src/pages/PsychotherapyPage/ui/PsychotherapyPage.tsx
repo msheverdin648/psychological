@@ -10,6 +10,7 @@ import { RegularSessionsBlock } from 'widgets/RegularSessionsBlock';
 import { ChangeNowBlock } from 'widgets/ChangeNowBlock';
 import { ServicesBlock } from 'widgets/ServicesBlock';
 import { Discussion } from 'enteties/Discussion';
+import { iconPosition } from 'widgets/CanHelpBlock/models/types';
 
 interface PsychotherapyPageProps {
     className?: string;
@@ -18,15 +19,87 @@ interface PsychotherapyPageProps {
 const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
     const { className } = props;
 
+    const firstCircleCards = [
+        {
+            id: 1,
+            icon: "💧",
+            text: 'Травмы и утраты',
+            icon_position: iconPosition.LEFT
+        },
+        {
+            id: 2,
+            icon: "😟",
+            text: 'Чувство одиночества',
+            icon_position: iconPosition.LEFT
+        },
+        {
+            id: 3,
+            icon: "😞",
+            text: 'Депрессия и тревожность',
+            icon_position: iconPosition.LEFT
+        },
+        {
+            id: 4,
+            icon: "🙏",
+            text: 'Поддержка и помощь',
+            icon_position: iconPosition.LEFT
+        },
+        {
+            id: 5,
+            icon: "👨‍💼",
+            text: 'Проблемы на работе',
+            icon_position: iconPosition.LEFT
+        },
+        {
+            id: 6,
+            icon: "🍔",
+            text: 'Пищевое поведение',
+            icon_position: iconPosition.RIGHT
+        },
+    ]
+
+    const secondCircleCards = [
+        {
+            id: 1,
+            icon: "💑",
+            text: 'Трудности в отношениях',
+            icon_position: iconPosition.RIGHT
+        },
+        {
+            id: 2,
+            icon: "💔",
+            text: 'Сексуальные и романтические отношения',
+            icon_position: iconPosition.RIGHT
+        },
+        {
+            id: 3,
+            icon: "👨‍👩‍👦‍👦",
+            text: 'Отношения с родителями',
+            icon_position: iconPosition.RIGHT
+        },
+        {
+            id: 4,
+            icon: "🧒",
+            text: 'Общение с детьми',
+            icon_position: iconPosition.RIGHT
+        },
+        {
+            id: 5,
+            icon: "🧠",
+            text: 'Психосоматика',
+            icon_position: iconPosition.RIGHT
+        },
+    ]
+
     return (
         <div className={classNames(cls.psychotherapyPage, {}, [className ?? ''])}>
-            <CanHelpBlock />
+            <CanHelpBlock firstCircleCards={firstCircleCards} secondCircleCards={secondCircleCards}/>
             <Discussion />
             <ServicesBlock />
             <ChangeNowBlock />
             <AboutConsultationBlock />
             <RegularSessionsBlock />
-            <Banner photo={banner} color={'rgba(66, 136, 189, 0.85)'}>
+            <Banner photo={banner} color={'rgba(66, 136, 189, 0.85)'} id={'certificates'}>
                 <h2 className={cls.title}>
                     Дарите заботу <br /> близким
                 </h2>

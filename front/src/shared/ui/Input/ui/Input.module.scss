@@ -4,11 +4,23 @@
     border: none;
     padding: 17px 30px;
     font: var(--font-m);
-    color: #000;
-    background: var(--color-l-gray);
     border-radius: 10px;
 }
 
-.input::placeholder {
+.gray {
+    color: #000;
+    background: var(--color-l-gray);
+}
+
+.gray::placeholder {
+    color: #000;
+}
+
+.white {
+    background: #fff;
+    color: #000;
+}
+
+.white::placeholder {
     color: #000;
 }

@@ -9,6 +9,7 @@ interface BannerProps {
     photo?: string;
     color?: string;
     children: ReactNode;
+    id?: string;
 }
 
 export const Banner: React.FC<BannerProps> = (props) => {
@@ -16,7 +17,8 @@ export const Banner: React.FC<BannerProps> = (props) => {
         className,
         photo,
         color,
-        children
+        children,
+        ...otherProps
     } = props;
 
 
@@ -26,7 +28,7 @@ export const Banner: React.FC<BannerProps> = (props) => {
                 backgroundImage: photo ? `url(${photo})` : `none`,
                 backgroundColor: color ? color : 'none',
             }
-        }>
+        } {...otherProps}>
             <div className="container">
                 <div className={cls.content}>
                     {children}

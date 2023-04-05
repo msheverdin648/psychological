@@ -1,9 +1,12 @@
-import { useState } from 'react';
-import { useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { DiscussionCard } from '../DiscussionCard/DiscussionCard';
-import { DiscussionNav } from '../DiscussionNav/DiscussionNav';
 import cls from './DiscussionForm.module.scss';
+import { ChoseDiscussionTheme } from '../ChoseDiscussionTheme/ChoseDiscussionTheme';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { DiscussionSlice } from 'enteties/Discussion/redux/DiscussionSlice';
+import { ChoseExperience } from '../ChoseExperience/ChoseExperience';
+import { FeedbackForm } from '../FeedbackForm/FeedbackForm';
+import { ChoseDiscussionDate } from '../ChoseDiscussionDate/ChoseDiscussionDate';
 
 interface DiscussionFormProps {
     className?: string;
@@ -12,28 +15,41 @@ interface DiscussionFormProps {
 export const DiscussionForm: React.FC<DiscussionFormProps> = (props) => {
     const { className } = props;
 
-    const [cards, setCards] = useState([
-        'Поиск себя', 'Карьерное развитие',
-        'Романтические и сексуальные отношения', 'Трудности в отношениях',
-        'Утраты, потеря близкого человека', 'Депрессия', 'Хроническая усталость', 
-        'Чувство тревоги', 'Проблемы со сном', 'Пищевое поведение', 'Профессиональное самоопределение'
-    ])
+    const dispatch = useAppDispatch() 
+    const { cards } = useAppSelector(state => state.DiscussionThemesReducer)
+    const { curPage, totalPages, fixedPagesCount } = useAppSelector(state => state.DiscussionReducer)
 
 
-    const { cards: discussionsCards } = useAppSelector(state => state.DiscussionReducer)
+
+
+    useEffect(
+        ()=>{
+            dispatch(DiscussionSlice.actions.setPagesCount(cards.length)) 
+        },[cards.length]
+    )
+
 
     return (
         <div className={classNames(cls.discussionForm, {}, [className ?? '' ])}>
-            <h2 className={cls.title}>Что бы вы хотели обсудить?</h2>
-            <h3 className={cls.subTitle}>Запишитесь сейчас</h3>
-            <DiscussionNav />
-            <div className={cls.cards}>
-                {
-                    cards.map((text, index)=>(
-                        <DiscussionCard text={text} key={`discussionCard_${index}`} active = {Boolean(discussionsCards.find((card)=>card.text===text)) } />
-                    ))
-                }
-            </div>
+            {
+                curPage <= totalPages - fixedPagesCount
+                    ?
+                    <ChoseDiscussionTheme className={cls.form} />
+                    :
+                    curPage === totalPages - 2
+                        ?
+                        <ChoseDiscussionDate className={cls.form} />
+                        :
+                        curPage === totalPages - 1
+                            ?
+                            <ChoseExperience className={cls.form}/>
+                            :
+                            curPage === totalPages
+                                ?
+                                <FeedbackForm className={cls.form}/>
+                                :
+                                null
+            }
         </div>
     );
 }
