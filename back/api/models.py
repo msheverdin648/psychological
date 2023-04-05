@@ -2,7 +2,7 @@ from django.db import models
 import locale
 
 # Устанавливаем локаль на русскую
-locale.setlocale(locale.LC_TIME, 'ru_RU')
+# locale.setlocale(locale.LC_TIME, 'ru_RU')
 
 class DiscussionTheme(models.Model):
     
