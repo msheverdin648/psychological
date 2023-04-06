@@ -11,13 +11,13 @@ import { FC } from 'react';
 
 
 export const enum ServiceBlockNames {
-    ONLINE='online',
+    // ONLINE='online',
     FAMILY='family',
     VISIT='visit'
 }
 
 export const  ServiceBlocks: Record<ServiceBlockNames, FC> = {
-    [ServiceBlockNames.ONLINE]: OnlineService,
+    // [ServiceBlockNames.ONLINE]: OnlineService,
     [ServiceBlockNames.FAMILY]: FamilyService,
     [ServiceBlockNames.VISIT]: VisitService
 }
@@ -25,11 +25,11 @@ export const  ServiceBlocks: Record<ServiceBlockNames, FC> = {
 
 const initialState: ServiceState = {
     services: [
-        {
-            name: ServiceBlockNames.ONLINE,
-            title: 'Онлайн - психоаналитический психотерапевт'
+        // {
+        //     name: ServiceBlockNames.ONLINE,
+        //     title: 'Онлайн - психоаналитический психотерапевт'
 
-        },
+        // },
         {
             name: ServiceBlockNames.FAMILY,
             title: 'Семейный психоаналитический психотерапевт'
@@ -40,9 +40,7 @@ const initialState: ServiceState = {
         },
         
     ],
-    activeService: {
-        name: ServiceBlockNames.FAMILY,
-    }
+    activeService: ServiceBlockNames.FAMILY,
 }
 
 
@@ -51,10 +49,9 @@ export const ServicesSlice = createSlice({
     name: 'serivce',
     reducers:{
         setBlock(state, action: PayloadAction<string>){
-            // state.activeService = state.services.filter(({name})=>{name===action.payload})
             const service = state.services.find(({name})=>name===action.payload)
             if (service){
-                state.activeService = service
+                state.activeService = service.name
             }
         }
     }

@@ -39,7 +39,7 @@ export const NewsBlock: React.FC<NewsBlockProps> = (props) => {
     )
 
     return (
-        <div className={classNames(cls.newsBlock, {}, [className ?? '' ])}>
+        <div className={classNames(cls.newsBlock, {}, [className ?? '' ])} style={{display: 'none'}}>
             <div className="container">
                 <div className={cls.content}>
                     <h2 className={cls.title}>Новости 📰</h2>

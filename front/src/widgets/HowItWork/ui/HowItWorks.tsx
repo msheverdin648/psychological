@@ -18,7 +18,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = (props) => {
             card: {
                 id: 1,
                 icon: '👤',
-                text: 'Сотрудник создает личный кабинет на сайте',
+                text: 'Заключаем договор с организацией',
             },
             theme: HowItWorksCardThemes.TEXT_BOTTOM,
         },
@@ -26,7 +26,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = (props) => {
             card: {
                 id: 2,
                 icon: '👛',
-                text: 'Сотрудник создает личный кабинет на сайте',
+                text: 'Получаем оплату по выставленному счету',
             },
             theme: HowItWorksCardThemes.TEXT_TOP,
         },
@@ -34,7 +34,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = (props) => {
             card: {
                 id: 3,
                 icon: '🕔',
-                text: 'Бронирует удобную дату и время',
+                text: 'Сотрудник Бронирует удобную дату и время',
             },
             theme: HowItWorksCardThemes.TEXT_BOTTOM,
         },

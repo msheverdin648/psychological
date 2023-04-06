@@ -3,6 +3,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { ICircleCard, iconPosition } from 'widgets/CanHelpBlock/models/types';
 import { CircleCard } from '../CircleCard/CircleCard';
 import cls from './CanHelpBlock.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 interface CanHelpBlockProps {
     className?: string;
@@ -86,7 +87,7 @@ export const CanHelpBlock: React.FC<CanHelpBlockProps> = (props) => {
     } = props;
 
 
-   
+    const navigate = useNavigate()
 
     return (
         <div className={classNames(cls.canHelpBlock, {}, [className ?? '' ])}>
@@ -102,7 +103,7 @@ export const CanHelpBlock: React.FC<CanHelpBlockProps> = (props) => {
                                 ))
                             }
                             <span className={classNames(cls.card, {}, [cls.btn])}>
-                                <Button theme={ButtonTheme.BLUE}>Обсудить детали</Button>
+                                <Button theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Обсудить детали</Button>
                             </span>
                         </div>
                         

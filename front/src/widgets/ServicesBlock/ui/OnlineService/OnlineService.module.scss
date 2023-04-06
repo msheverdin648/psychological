@@ -1,0 +1,27 @@
+
+
+.onlineService{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.text {
+    color: #000;
+    font: var(--font-l);
+}
+
+.button {
+    margin-top: auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex: 0 0 45%;
+}
+
+.img {
+    width: 400px;
+}

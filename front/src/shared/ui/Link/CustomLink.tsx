@@ -6,6 +6,7 @@ import cls from './CustomLink.module.scss';
 interface CustomLinkProps extends LinkHTMLAttributes<HTMLLinkElement>{
     className?: string;
     to: string;
+    clickHandler?: any;
 }
 
 
@@ -15,14 +16,14 @@ export const CustomLink: React.FC<CustomLinkProps> = (props) => {
         className, 
         to,
         children,
-        ...otherProps
+        clickHandler,
     } = props;
 
 
     const location = useLocation()
 
     return (
-        <Link to={to} className={classNames(cls.link, {[cls.active]:location.pathname===to}, [className ?? '' ])}>
+        <Link to={to} className={classNames(cls.link, {[cls.active]:location.pathname===to}, [className ?? '' ])} onClick={clickHandler}>
             {children}
         </Link>
     );

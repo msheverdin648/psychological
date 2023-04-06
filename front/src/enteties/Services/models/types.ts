@@ -10,5 +10,5 @@ export interface IService {
 
 export interface ServiceState {
     services: IService[];
-    activeService: Pick<IService, 'name'>;
+    activeService: ServiceBlockNames;
 }

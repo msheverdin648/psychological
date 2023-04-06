@@ -76,3 +76,20 @@
     font: var(--font-m);
     text-align: center;
 }
+
+
+@media screen and (max-width: 1239px) {
+    .descriptionCard {
+        flex: 0 0 25%;
+    }
+}  
+@media screen and (max-width: 890px) {
+    .descriptionCard {
+        flex: 0 0 35%;
+    }
+}  
+@media screen and (max-width: 610px) {
+    .descriptionCard {
+        flex: 0 0 100%;
+    }
+}  

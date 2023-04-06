@@ -1,9 +1,9 @@
-import { useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './FamilyService.module.scss';
 
 import Image from 'shared/assets/img/service-img.png'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 
 interface FamilyServiceProps {
@@ -15,7 +15,7 @@ export const FamilyService: React.FC<FamilyServiceProps> = (props) => {
 
     
 
-    
+    const navigate = useNavigate()
     
     
     
@@ -75,10 +75,10 @@ export const FamilyService: React.FC<FamilyServiceProps> = (props) => {
                         решить сложности в воспитании детей
                     </li>
                 </ul>
-                <Button theme={ButtonTheme.BLUE}>Записаться на консультацию</Button>
+                <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Записаться на консультацию</Button>
             </div>
             <div className={cls.block}>
-                <img src={Image} alt="" />
+                <img src={Image} className={cls.img} alt="" />
             </div>
         </div>
     );

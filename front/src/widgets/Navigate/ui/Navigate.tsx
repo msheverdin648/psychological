@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { CustomLink } from 'shared/ui/Link/CustomLink';
 import cls from './Navigate.module.scss';
+import { Header } from 'widgets/Header';
 
 interface NavigateProps {
     className?: string;
@@ -13,13 +14,12 @@ export const Navigate: React.FC<NavigateProps> = (props) => {
         <nav className={classNames(cls.navigate, {}, [])}>
             <div className="container">
                 <div className={cls.navigateContent}>
-                    <CustomLink to='/'>Для бизнеса</CustomLink>
-                    <CustomLink to='/psychotherapy'>Психотерапия</CustomLink>
-                    <CustomLink to='/about'>Обо мне</CustomLink>
-                    <CustomLink to='/psychotherapy#services'>Все услуги</CustomLink>
-                    <CustomLink to='/psychotherapy#certificates'>Подарочные сертификаты </CustomLink>
-                    <CustomLink to='/#contacts'>Контакты</CustomLink>
-                    <CustomLink to='/#Q_A'>Вопросы и ответы</CustomLink>
+                    <CustomLink className={cls.link} to='/'>Для бизнеса</CustomLink>
+                    <CustomLink className={cls.link} to='/psychotherapy'>Психотерапия</CustomLink>
+                    <CustomLink className={cls.link} to='/about'>Обо мне</CustomLink>
+                    <CustomLink className={cls.link} to='/psychotherapy#services'>Все услуги</CustomLink>
+                    <CustomLink className={cls.link} to='/psychotherapy#certificates'>Подарочные сертификаты </CustomLink>
+                    <CustomLink className={cls.link} to='/#contacts'>Контакты</CustomLink>
                 </div>
             </div>
         </nav>

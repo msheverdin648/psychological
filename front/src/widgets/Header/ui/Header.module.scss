@@ -1,7 +1,6 @@
 
 
 .header {
-    padding: 40px 0;
     
 }
 
@@ -9,9 +8,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 40px 0;
 }
 
 .text {
     font: var(--font-l);
     color: #000;   
+}
+
+@media screen and (max-width: 1101px) {
+    .headerContent {
+        display: none;
+    }
+    
 }

@@ -1,7 +1,7 @@
 .serviceNav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .link {
@@ -14,4 +14,27 @@
 
 .link:not(:last-child) {
     border-right: 2px solid #000;
+}
+
+
+@media screen and (max-width: 620px) {
+    .serviceNav {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .link {
+        font-size: 20px;
+        line-height: 124%;
+        margin-bottom: 20px;
+    }
+    .link:not(:last-child) {
+        border-bottom: 2px solid #000;
+        border-right: none;
+        padding-bottom: 15px;
+    }
+
+    .img {
+        width: 100%;
+    }
 }

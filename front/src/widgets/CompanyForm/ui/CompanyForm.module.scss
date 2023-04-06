@@ -84,3 +84,18 @@
 .policy a:hover {
     color: var(--color-blue);
 }
+
+
+@media screen and (max-width: 1239px) {
+    .imageBlock {
+        display: none;
+    }
+
+    .companyForm{
+        max-width: 95%;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}

@@ -42,3 +42,13 @@
 .policy a {
     color: var(--color-blue);
 }
+
+@media screen and (max-width: 1560px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    
+}

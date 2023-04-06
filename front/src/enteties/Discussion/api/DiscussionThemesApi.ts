@@ -1,13 +1,14 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/dist/query/react'
 import { IDiscussionThemes } from '../models/types'
+import { baseUrl } from 'shared/config/ApiConfig/ApiConfig'
 
 
 
 export const discussionThemesApi =  createApi({
     reducerPath: 'discussionThemesApi',
     baseQuery: fetchBaseQuery({
-        // baseUrl: 'http://localhost:8000/api/v1'
-        baseUrl: 'http://116.202.233.248/api/v1'
+        baseUrl: baseUrl
+
     }),
     endpoints: (build) => ({
         fetchAvailableThemes: build.query<IDiscussionThemes[], any>({

@@ -37,6 +37,10 @@
     font: var(--font-m);
 }
 
+.social:hover {
+    text-decoration: underline;
+}
+
 .phone {
     font: var(--font-l);
     font-size: 28px;
@@ -44,4 +48,34 @@
 
 .socialIcon {
     margin-right: 22px;
+}
+
+
+@media screen and (max-width: 1239px) {
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .infoBlock {
+        padding: 0;
+        order: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form {
+        order: 1;
+        max-width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 610px) {
+    
 }

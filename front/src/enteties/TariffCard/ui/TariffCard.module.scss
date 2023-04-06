@@ -53,3 +53,11 @@
 .info {
     font: var(--font-m);
 }
+
+
+
+@media screen and (max-width: 710px) {
+    .tariffCard {
+        flex: 0 0 40%;
+    }
+}

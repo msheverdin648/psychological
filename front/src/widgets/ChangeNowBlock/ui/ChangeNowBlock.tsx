@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './ChangeNowBlock.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 interface ChangeNowBlockProps {
     className?: string;
@@ -36,6 +37,8 @@ export const ChangeNowBlock: React.FC<ChangeNowBlockProps> = (props) => {
         },
     ])
 
+    const navigate = useNavigate()
+
     return (
         <div className={classNames(cls.changeNowBlock, {}, [className ?? '' ])}>
             <div className="container">
@@ -50,7 +53,7 @@ export const ChangeNowBlock: React.FC<ChangeNowBlockProps> = (props) => {
                             ))
                         }
                     </div>
-                    <Button theme={ButtonTheme.BLUE_BORDERED} >
+                    <Button theme={ButtonTheme.BLUE_BORDERED} onClick={()=>{navigate('#Q_A')}}>
                         Остались вопросы?
                         Мы перезвоним и ответим на них!
                     </Button>

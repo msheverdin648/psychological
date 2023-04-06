@@ -18,7 +18,7 @@ export const AskQuestion: React.FC<AskQuestionProps> = (props) => {
         <div className={classNames(cls.askQuestion, {}, [className ?? '' ])} >
             <div className="container">
                 <div className={cls.content}>
-                    <QuestionForm />
+                    <QuestionForm className={cls.form} />
                     <div className={cls.infoBlock} id="contacts">
                         <span className={cls.icon}>🔔</span>
                         <h3 className={cls.title}>Контакты</h3>
@@ -27,10 +27,9 @@ export const AskQuestion: React.FC<AskQuestionProps> = (props) => {
                             Свяжитесь с нами — и мы Вам поможем!
                         </p>
                         <ul className={cls.socials}>
-                            <li className={classNames(cls.phone, {}, [cls.social])}><WhatsAppIcon className={cls.socialIcon}/> +7 920 000 00 00</li>
-                            <li className={classNames('', {}, [cls.social])}><TgIcon className={cls.socialIcon}/>@имя</li>
-                            <li className={classNames('', {}, [cls.social])}><EmailIcon className={cls.socialIcon}/>info@info.com</li>
-                            <li className={classNames('', {}, [cls.social])}><PointMarkIcon className={cls.socialIcon}/>г. Москва, ул. Название</li>
+                            <li className={classNames(cls.phone, {}, [cls.social])}><WhatsAppIcon className={cls.socialIcon}/> <a href="tel:+79675556819" >+7 967 555 68 19</a></li>
+                            <li className={classNames('', {}, [cls.social])}><TgIcon className={cls.socialIcon}/><a target='_blank' href="https://t.me/nikolaevaly" rel="noreferrer">@nikolaevaly</a></li>
+                            <li className={classNames('', {}, [cls.social])}><EmailIcon className={cls.socialIcon}/><a  href="mailto:info@nikolaevaly.ru" >info@nikolaevaly.ru</a></li>
                         </ul>
                     </div>
                 </div>

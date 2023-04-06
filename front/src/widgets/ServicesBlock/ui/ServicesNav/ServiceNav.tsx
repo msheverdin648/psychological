@@ -19,11 +19,12 @@ export const ServiceNav: React.FC<ServiceNavProps> = (props) => {
         dispatch(ServicesSlice.actions.setBlock(name))
     }
 
+
     return (
         <div className={classNames(cls.serviceNav, {}, [className ?? '' ])}>
             {
                 services.map(({name, title})=>(
-                    <ServicesNavLink onClick={()=>changeBlockHandler(name)} className={classNames(cls.link, {}, [])} key={name} active={activeService.name === name} >
+                    <ServicesNavLink onClick={()=>changeBlockHandler(name)} className={classNames(cls.link, {}, [])} key={name} active={activeService === name} >
                         {title}
                     </ServicesNavLink>
                 ))

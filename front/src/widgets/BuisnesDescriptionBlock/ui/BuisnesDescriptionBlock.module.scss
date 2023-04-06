@@ -44,3 +44,34 @@
     margin-bottom: 68px;
 
 }
+
+@media screen and (max-width: 1239px) {
+    .cards {
+        margin-top: 0;
+    }
+
+    .text {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .cards {
+        margin-top: 0;
+    }
+
+    .title {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .cards {
+        flex-direction: column;
+    }
+
+
+    .card {
+        margin-bottom: 20px;
+    }
+}

@@ -10,7 +10,7 @@ export const Discussion: React.FC<DiscussionProps> = (props) => {
     const { className } = props;
 
     return (
-        <div className={classNames(cls.discussion, {}, [className ?? '' ])}>
+        <div className={classNames(cls.discussion, {}, [className ?? '' ])} id={'appointment'}>
             <div className="container">
                 <DiscussionForm />
             </div>

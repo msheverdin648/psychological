@@ -46,3 +46,10 @@
 .button {
     align-self: center;
 }
+
+
+@media screen and (max-width: 980px) {
+    .inputs {
+        width: 100%;
+    }
+}

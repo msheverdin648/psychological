@@ -17,16 +17,7 @@ export const CheckBlock: React.FC<CheckBlockProps> = (props) => {
             card: {
                 icon: <p className={cls.icon}>✅</p>,
                 title: 'Оплата консультаций',
-                text: 'Оплата вносится только после фактического проведения сессии',
-            },
-            theme: DescriptionCardThemes.CLEAR,
-        },
-        {
-            card: {
-                icon: <p className={cls.icon}>✅</p>,
-                title: 'Комбинированные формы оплаты',
-                text: 'Текст?',
-
+                text: 'Оплата вносится до начала сессии',
             },
             theme: DescriptionCardThemes.CLEAR,
         },

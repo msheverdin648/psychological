@@ -12,6 +12,7 @@ import { AppRouter } from './router';
 import { persistor, store } from './store/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import './styles/index.scss'
+import { MenuBurger } from 'widgets/MenuBurger/MenuBurger';
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
                         <div className="content-page">
                             <div>
                                 <Header />
-                                <Navigate />
+                                <MenuBurger />
                             </div>
                             <AppRouter />
                             <Footer />

@@ -2,13 +2,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useForm } from "react-hook-form";
 import cls from './FeedbackForm.module.scss';
 import { DiscussionNav } from '../DiscussionNav/DiscussionNav';
-import { Input, InputThemes } from 'shared/ui/Input/ui/Input';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useAppDispatch, useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { DiscussionSlice } from 'enteties/Discussion/redux/DiscussionSlice';
-import { FeedbackFormState, IAppointment } from 'enteties/Discussion/models/types';
-import { createAppointment } from 'enteties/Discussion/services/DiscussionServices';
-import { useEffect } from 'react';
+import { IAppointment } from 'enteties/Discussion/models/types';
 import { discussionDateApi } from 'enteties/Discussion/api/DiscussionDateApi';
 
 

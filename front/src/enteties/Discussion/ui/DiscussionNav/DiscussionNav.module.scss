@@ -56,3 +56,12 @@
     color: var(--color-blue);
     text-align: center;
 }
+
+@media screen and (max-width: 980px) {
+
+    .discussionNav {
+        justify-content: center;
+        margin: 30px 0;
+    }
+    
+}

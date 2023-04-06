@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
+import { ScrollToAnchor } from 'app/lib/scrollToAnchor';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -21,11 +22,14 @@ export const Button: React.FC<ButtonProps> = (props) => {
         className, 
         children, 
         theme=ButtonTheme.WHITE, 
-        ...otherProps 
+        ...otherProps
     } = props;
 
     return (
-        <button className={classNames(cls.button, {}, [className ?? '', cls[theme]])} {...otherProps}>
+        <button 
+            className={classNames(cls.button, {}, [className ?? '', cls[theme]])}             
+            {...otherProps}
+        >
             {children}
         </button>
     );

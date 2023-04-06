@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.db import models
+from django.forms import TimeInput
+ 
 from .models import DiscussionTheme, Day, TimeSlot, Client, Appointment
 
 class TimeSlotInline(admin.TabularInline):
@@ -10,9 +13,12 @@ class DayAdmin(admin.ModelAdmin):
     list_display = ['date', 'is_available']
     list_filter = ['date', 'is_available']
 
+
+
 class TimeSlotAdmin(admin.ModelAdmin):
     list_display = ['day', 'formatted_start_time', 'formatted_end_time', 'is_available', 'is_reserved']
     list_filter = ['day', 'is_available', 'is_reserved']
+
 
     def formatted_start_time(self, obj):
         # Форматирование времени начала слота

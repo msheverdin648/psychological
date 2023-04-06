@@ -21,3 +21,43 @@
 .listItem {
     list-style-type: disc;
 }
+
+@media screen and (max-width: 1060px) {
+
+    .familyService {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .column {
+        order: 1;
+    }
+
+    .block {
+        order: 0;
+        display: flex;
+    }
+
+    .block:first-child{
+        order: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .block:last-child {
+        order: 0;
+        justify-content: center;
+    }
+    
+    .button{
+        align-self: center;
+    }
+
+   
+}
+
+@media screen and (max-width: 650px) {
+    .img {
+        width: 100%;
+    }
+}

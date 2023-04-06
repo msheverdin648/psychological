@@ -7,6 +7,7 @@ import cls from './BuisnesDescriptionBlock.module.scss';
 import { ReactComponent as Icon_1  } from 'shared/assets/img/icons/descriptionCard_1.svg'
 import { ReactComponent as Icon_2  } from 'shared/assets/img/icons/descriptionCard_2.svg'
 import { DescriptionCardThemes } from 'enteties/DescriptionCard/ui/DescriptionCard';
+import { useNavigate } from 'react-router-dom';
 
 
 interface BuisnesDescriptionBlockProps {
@@ -34,6 +35,8 @@ export const BuisnesDescriptionBlock: React.FC<BuisnesDescriptionBlockProps> = (
         },
     ])
 
+    const navigate = useNavigate()
+
     return (
         <div className={classNames(cls.buisnesDescriptionBlock, {}, [className ?? '' ])}>
             <div className="container">
@@ -53,7 +56,7 @@ export const BuisnesDescriptionBlock: React.FC<BuisnesDescriptionBlockProps> = (
                             ))
                         }
                     </div>
-                    <Button className={cls.btn} theme={ButtonTheme.BLUE}>
+                    <Button className={cls.btn} theme={ButtonTheme.BLUE} onClick={()=>{navigate('#Q_A')}}>
                         Остались вопросы?
                         Мы перезвоним и ответим на них!
                     </Button>

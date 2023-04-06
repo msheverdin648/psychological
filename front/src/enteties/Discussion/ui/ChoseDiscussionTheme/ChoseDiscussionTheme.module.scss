@@ -4,3 +4,12 @@
     flex-wrap: wrap;
     margin-top: 30px;
 }
+
+@media screen and (max-width: 840px) {
+    .cards {
+        height: 40vh;
+        overflow-y: auto;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}

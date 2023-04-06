@@ -12,7 +12,7 @@ export const CompanyForm: React.FC<CompanyFormProps> = (props) => {
     const { className } = props;
 
     return (
-        <div className={classNames(cls.companyForm, {}, [className ?? '' ])}>
+        <div className={classNames(cls.companyForm, {}, [className ?? '' ])} id='companyForm'>
             <div className={cls.imageBlock}></div>
             <div className={cls.contentBlock}>
                 <h3 className={cls.title}>

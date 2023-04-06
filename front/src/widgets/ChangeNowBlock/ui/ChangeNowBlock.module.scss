@@ -28,3 +28,17 @@
 .card {
     margin: 0 35px;
 }
+
+
+@media screen and (max-width: 1239px) {
+
+    .cards{
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+
+}

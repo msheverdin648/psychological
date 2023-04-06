@@ -44,3 +44,10 @@
     font: var(--font-l);
     opacity: 0.5;
 }
+
+
+@media screen and (max-width: 1239px) {
+    .card {
+        flex: 1 0 25%;
+    }
+}

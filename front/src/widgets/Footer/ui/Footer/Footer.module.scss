@@ -21,3 +21,17 @@
 .logo {
     margin-bottom: 30px;
 }
+
+@media screen and (max-width: 1101px) {
+    .footerContent {
+        // flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 0 -20px;
+    }
+
+    .column {
+        margin: 0 20px;
+        margin-bottom: 20px;
+    }
+}

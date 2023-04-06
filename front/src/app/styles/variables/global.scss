@@ -16,10 +16,7 @@
     --font-size-xl: 45px;
     --font-line-xl: 54px;
     --font-xl: 700 var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
-    // --navbar-height: 100px;
-
-    // --sidebar-width: 300px;
-    // --sidebar-width-collapsed: 80px;
+   
 
     --color-green: #2CBB77;
     --color-l-green: rgba(44, 187, 119, 0.1);
@@ -28,4 +25,19 @@
     --color-d-gray: rgba(135, 135, 135, 0.2) ;
     --color-l-gray: #F3F3F3 ;
 
+}
+
+@media screen and (max-width: 1239px) {
+    :root {
+        --font-size-m: 14px;
+        --font-line-m: 17px;
+
+        --font-size-l: 16px;
+        --font-line-l: 20px;
+
+        --font-size-xl: 34px;
+        --font-line-xl: 43px;
+    }
+    
+    
 }

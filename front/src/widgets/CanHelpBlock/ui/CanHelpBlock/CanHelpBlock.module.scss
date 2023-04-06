@@ -117,3 +117,60 @@
 }
 
 
+@media screen and (max-width: 1239px) {
+
+
+    .circles {
+        justify-content: space-between;
+    }
+
+    .circle {
+        background: transparent;
+        width: 50%;
+        height: auto;
+    }
+
+    .firstCircle, .secondCircle {
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        & >.card{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+    }
+
+    .firstCircle > .card:nth-child(n),
+    .secondCircle > .card:nth-child(n) {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: none;
+    }   
+
+    .firstCircle {
+        order: 1;
+
+    }
+
+    .secondCircle {
+        order: 0;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .circles {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .circle {
+        width: 100%;
+    }
+}

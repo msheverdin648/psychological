@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './RegularSessionsBlock.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 interface RegularSessionsBlockProps {
     className?: string;
@@ -42,6 +43,8 @@ export const RegularSessionsBlock: React.FC<RegularSessionsBlockProps> = (props)
         },
     ]) 
 
+    const navigate = useNavigate()
+
     return (
         <div className={classNames(cls.regularSessionsBlock, {}, [className ?? '' ])}>
             <div className="container">
@@ -57,7 +60,7 @@ export const RegularSessionsBlock: React.FC<RegularSessionsBlockProps> = (props)
                             ))
                         }
                     </div>
-                    <Button theme={ButtonTheme.BLUE}>Хочу обсудить свою ситуацию</Button>
+                    <Button theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Хочу обсудить свою ситуацию</Button>
                 </div>
             </div>
         </div>

@@ -19,3 +19,15 @@
     margin-bottom: 15px;
     font: var(--font-m);
 }
+
+@media screen and (max-width: 1239px) {
+    .list {
+        align-self: center;
+        width: 100%;
+    }
+    
+    .banner {
+        background-image: none !important;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+}

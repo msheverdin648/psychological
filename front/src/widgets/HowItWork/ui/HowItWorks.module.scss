@@ -5,7 +5,9 @@
     margin: 100px 0;
     background: url('../../../shared/assets/img/dashed_wave.svg') center no-repeat;
     background-color: var(--color-d-gray);
-    background-position: 55% 59%;
+    background-position: 140% 60%;
+    /* background-repeat-x: repeat; */
+    background-size: 90% auto;
 }
 
 
@@ -22,4 +24,20 @@
 .title {
     font: var(--font-xl);
     margin-bottom: 94px;
+}
+
+
+@media screen and (max-width: 770px) {
+    
+    .howItWorks{
+        background-image: none;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
 }

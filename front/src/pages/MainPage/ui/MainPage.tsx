@@ -12,6 +12,7 @@ import { NewsBlock } from 'widgets/NewsBlock';
 import { Tariffs } from 'widgets/Tariffs';
 import cls from './MainPage.module.scss';
 import banner from 'shared/assets/img/banner.jpg'
+import { useNavigate } from 'react-router-dom';
 
 
 interface MainPageProps {
@@ -20,6 +21,8 @@ interface MainPageProps {
 
 const MainPage: React.FC<MainPageProps> = (props) => {
     const { className } = props;
+
+    const navigate = useNavigate()
 
     return (
         <div className={classNames(cls.mainPage, {}, [className ?? ''])}>
@@ -31,7 +34,7 @@ const MainPage: React.FC<MainPageProps> = (props) => {
                         здоровье сотрудников, и они впечатлят
                         вас результатом
                 </h2>
-                <Button theme={ButtonTheme.BLUE} className={cls.button}>
+                <Button theme={ButtonTheme.BLUE} className={cls.button} onClick={()=>{navigate('#companyForm')}}>
                         Оставить заявку
                 </Button>
             </Banner>

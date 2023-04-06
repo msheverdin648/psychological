@@ -1,8 +1,10 @@
-import { ServiceBlocks } from 'enteties/Services/ServicesSlice';
+import { ServiceBlockNames, ServiceBlocks } from 'enteties/Services/ServicesSlice';
 import { useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ServiceNav } from '../ServicesNav/ServiceNav';
 import cls from './ServicesBlock.module.scss';
+import { FamilyService } from '../FamilyService/FamilyService';
+import { VisitService } from '../VisitService/VisitService';
 
 interface ServicesBlockProps {
     className?: string;
@@ -11,7 +13,7 @@ interface ServicesBlockProps {
 export const ServicesBlock: React.FC<ServicesBlockProps> = (props) => {
     const { className } = props;
 
-    const { services, activeService } = useAppSelector(state => state.ServicesReduser)
+    const {  activeService } = useAppSelector(state => state.ServicesReduser)
 
 
     return (
@@ -20,11 +22,18 @@ export const ServicesBlock: React.FC<ServicesBlockProps> = (props) => {
                 <div className={cls.content}>
                     <h2 className={cls.title}>Все услуги</h2>
                     <ServiceNav className={cls.nav} />
-                    <>
-                        {
-                            ServiceBlocks[activeService.name]({})
-                        }
-                    </>
+                    {
+                        activeService === ServiceBlockNames.FAMILY
+                            ?
+                            <FamilyService/>
+                            :
+                            activeService === ServiceBlockNames.VISIT
+                                ?
+                                <VisitService />
+                                :
+                                // <OnlineService />
+                                null
+                    }
                 </div>
             </div>
         </div>

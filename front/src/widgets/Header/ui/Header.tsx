@@ -3,6 +3,8 @@ import cls from './Header.module.scss'
 import {ReactComponent as Logo} from 'shared/assets/img/icons/logo.svg'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Navigate } from 'widgets/Navigate/ui/Navigate';
+
 
 
 interface HeaderProps {
@@ -21,10 +23,11 @@ export const Header: React.FC<HeaderProps> = (props) => {
                         <Logo className={classNames(cls.icon, {}, []) }/>
                     </Link>
                     <p className={cls.text}>Психоаналитическая психотерапия 🎯</p>
-                    <p className={cls.text}>+7 950 000 00 00</p>
-                    <Button theme={ButtonTheme.GREEN} onClick={()=>{navigate('/psychotherapy')}}>Записаться на прием</Button>
+                    <a href='tel:+79675556819' className={cls.text}>+7 967 555 68 19</a>
+                    <Button theme={ButtonTheme.GREEN} onClick={()=>{navigate('/psychotherapy#appointment')}}>Записаться на прием</Button>
                 </div>
             </div>
+            <Navigate />
         </header>
     )
 }

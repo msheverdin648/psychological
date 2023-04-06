@@ -32,11 +32,10 @@ export const Footer: React.FC<FooterProps> = (props) => {
                     <div className={cls.column}>
                         <CustomLink className={cls.link} to="/psychotherapy#certificates">Подарочные сертификаты</CustomLink>
                         <CustomLink className={cls.link} to="/#contacts">Контакты</CustomLink>
-                        <CustomLink className={cls.link} to="/#Q_A">Вопросы и ответы</CustomLink>
                     </div>
 
                     <div className={cls.column}>
-                        <Link to="#"><TgIcon /></Link>
+                        <a href="https://t.me/nikolaevaly" target='_blank' rel="noreferrer"><TgIcon /></a>
                     </div>
                 </div>
             </div>
