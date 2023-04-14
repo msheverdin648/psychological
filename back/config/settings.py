@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'django_crontab',
 
     'api'
 ]
@@ -106,9 +107,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-
-
-
+CRONJOBS = [
+    ('0 6 * * *', 'api.cron.update_slots') # Запуск обновления слотов каждый день в 6 утра
+]
 
 
 
