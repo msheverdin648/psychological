@@ -64,9 +64,9 @@ export const VisitService: React.FC<VisitServiceProps> = (props) => {
                         Если вы ищете свою истинную сущность и хотите жить осознанно и в ладу с собой и миром
                     </li>
                 </ul>
-
-
                 <p className={cls.text}>
+                    Район метро Лубянка<br/>
+                    Станция метро: Лубянка
                 </p>
                 <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Записаться на консультацию</Button>
             </div>

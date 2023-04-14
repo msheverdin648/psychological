@@ -5,6 +5,7 @@ import { ServiceNav } from '../ServicesNav/ServiceNav';
 import cls from './ServicesBlock.module.scss';
 import { FamilyService } from '../FamilyService/FamilyService';
 import { VisitService } from '../VisitService/VisitService';
+import { OnlineService } from '../OnlineService/OnlineService';
 
 interface ServicesBlockProps {
     className?: string;
@@ -31,8 +32,7 @@ export const ServicesBlock: React.FC<ServicesBlockProps> = (props) => {
                                 ?
                                 <VisitService />
                                 :
-                                // <OnlineService />
-                                null
+                                <OnlineService />
                     }
                 </div>
             </div>
