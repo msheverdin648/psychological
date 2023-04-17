@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import Day, TimeSlot, Appointment, DiscussionTheme, Client
+from .models import Day, TimeSlot, Appointment, DiscussionTheme, Client, CompanyRequest, Question
+from django.core.mail import send_mail
+
 
 
 class DiscussionThemeSerializer(serializers.ModelSerializer):
@@ -9,6 +11,8 @@ class DiscussionThemeSerializer(serializers.ModelSerializer):
 
 
 class TimeSlotSerializer(serializers.ModelSerializer):
+
+
     class Meta:
         model = TimeSlot
         fields = '__all__'
@@ -55,6 +59,26 @@ class AppointmentSerializer(serializers.ModelSerializer):
         appointment.save()
         time_slot_data.is_reserved = True
         time_slot_data.save()
+
+
+        # отправляем письмо на почту клиента
+        send_mail(
+            'Спасибо за вопрос',
+            f'Здравствуйте, {client_data["name"]}.\nХотим сообщить, что вы были успешно записаны на прием, который запланирован на {time_slot_data.start_time.strftime("%d.%m.%Y  %H:%M")}. \nДля подтверждения вашего приема, просим вас осуществить оплату размере 5.000 рублей, в течение 15 минут на карту: 00000000. \n\nС наилучшими пожеланиями,\nЛюдмила Юрьевна.',
+            'info@nikolaevaly.ru',
+            [client_data["email"]],
+            fail_silently=False,
+        )
+
+        # отправляем письмо на почту психолога
+        send_mail(
+            f'Запись на прием {time_slot_data.start_time.strftime("%d.%m.%Y  %H:%M")} {client_data["name"]}',
+            f'Имя: {client_data["name"]},\nEmail: {client_data["email"]},\nТелефон: {client_data["phone"]}',
+            'info@nikolaevaly.ru',
+            ['info@nikolaevaly.ru'],
+            fail_silently=False,
+        )
+        
         return appointment
         
         
@@ -65,4 +89,17 @@ class AppointmentDetailSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Appointment
+        fields = '__all__'
+
+
+class CompanyFormSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CompanyRequest
+        exclude = ('created_at',)
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Question
         fields = '__all__'

@@ -23,6 +23,8 @@ export const Input: React.FC<InputProps> = (props) => {
 
 
     return (
-        <input type={'text'} className={classNames(cls.input, {}, [className ?? '', cls[theme]])} {...otherProps} />  
+        <>
+            <input type={'text'} className={classNames(cls.input, {}, [className ?? '', cls[theme]])} {...otherProps} />  
+        </>
     );
 }

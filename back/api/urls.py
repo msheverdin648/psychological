@@ -9,4 +9,6 @@ urlpatterns = [
     path('appointments/', views.AppointmentView.as_view()),
     path('appointments/<appointment_id>/', views.AppointmentDetailView.as_view()),
     path('discussion-themes/', views.DiscussionThemesView.as_view()),
+    path('company-form/', views.CompanyFormView.as_view(), name='company-form'),
+    path('contact-psychologist/', views.QuestionView.as_view(), name='contact_psychologist'),
 ]

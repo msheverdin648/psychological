@@ -1,0 +1,31 @@
+.select {
+    -webkit-appearance: none; /* убирает дефолтную стрелку на Chrome и Safari */
+    position: relative;
+    -moz-appearance: none; /* убирает дефолтную стрелку на Firefox */
+    appearance: none; /* убирает дефолтную стрелку на других браузерах */
+    background: url('../../assets/img/icons/select-arrow.svg') no-repeat;
+    background-position: 95% 50%;
+    background-color: var(--color-l-gray);
+    padding: 17px 20px;
+    font: var(--font-m);    
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.select option {
+    cursor: pointer;
+    font: var(--font-m);
+    padding: 16px 20px;
+}
+
+.select::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background: #000;
+}

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django.forms import TimeInput
  
-from .models import DiscussionTheme, Day, TimeSlot, Client, Appointment
+from .models import DiscussionTheme, Day, TimeSlot, Client, Appointment, CompanyRequest, Question
 
 class TimeSlotInline(admin.TabularInline):
     model = TimeSlot
@@ -43,6 +43,20 @@ class DiscussionThemeAdmin(admin.ModelAdmin):
 
 class ClientAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'phone']
+
+
+@admin.register(CompanyRequest)
+class CompanyRequestAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'phone', 'company_name', 'created_at')
+    search_fields = ('name', 'email', 'phone', 'company_name', 'message')
+    readonly_fields = ('created_at',)
+
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'messenger', 'messenger_contact')
+    search_fields = ('name', 'messenger', 'messenger_contact')
+
+
 
 admin.site.register(DiscussionTheme, DiscussionThemeAdmin)
 admin.site.register(Day, DayAdmin)

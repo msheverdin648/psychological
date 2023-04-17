@@ -68,3 +68,33 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"Запись {self.id} ({self.client.name}) на {self.time_slot}"
+
+
+
+class CompanyRequest(models.Model):
+    name = models.CharField(verbose_name="Имя",max_length=255)
+    company_name = models.CharField(verbose_name="Компания", max_length=255)
+    email = models.EmailField(verbose_name="Почта")
+    phone = models.CharField(verbose_name="Телефон", max_length=20)
+    company_size = models.CharField(verbose_name="Размер компании", max_length=255)
+    created_at = models.DateTimeField(verbose_name="Дата создания заявки", auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Заявки на идивидуальное предложение для компаний"
+        verbose_name_plural = "Заявка на идивидуальное предложение для компаний"
+
+
+    def __str__(self):
+        return f'{self.company_name} - {self.name}. Email: {self.email}, phone: {self.phone}'
+    
+
+
+class Question(models.Model):
+    name = models.CharField(verbose_name="Имя", max_length=255)
+    email = models.EmailField(verbose_name="Почта", blank=True, null=True)
+    messenger = models.CharField(verbose_name="Мессенеджер", max_length=255)
+    messenger_contact = models.CharField(verbose_name="Контакт мессенеджера", max_length=255)
+    question = models.TextField(verbose_name="Вопрос")
+
+    def __str__(self):
+        return self.name

@@ -17,7 +17,7 @@ export const AboutPage: React.FC<AboutPageProps> = (props) => {
                     <div className={cls.block}>
                         <img src={Avatar} alt="" className={cls.img} />
                         <span className={cls.name}>Людмила Николаева</span>
-                        <span className={cls.position}>Психоаналитический<br/>ориентированный<br/>психотерапевт</span>
+                        <span className={cls.position}>Психоаналитически<br/>ориентированный<br/>психотерапевт</span>
                         <Button theme={ButtonTheme.BLUE} >Записаться на консультацию</Button>
                     </div>
                     <div className={classNames(cls.block, {}, [cls.secondBlock])}>

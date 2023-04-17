@@ -1,14 +1,27 @@
 from rest_framework import generics
-from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
+from rest_framework.response import Response
+from rest_framework import status
+
 from .models import (
     Day,
     TimeSlot,
     Client,
     Appointment,
-    DiscussionTheme
+    DiscussionTheme,
+    Question
 )
-from .serializers import DaySerializer, TimeSlotSerializer, AppointmentSerializer, AppointmentDetailSerializer, DiscussionThemeSerializer
+from .serializers import (
+    DaySerializer,
+    TimeSlotSerializer,
+    AppointmentSerializer,
+    AppointmentDetailSerializer,
+    DiscussionThemeSerializer,
+    CompanyFormSerializer,
+    QuestionSerializer
+)
 
 
 class DaysView(generics.ListCreateAPIView):
@@ -37,7 +50,7 @@ class AvailableTimeSlotList(generics.ListAPIView):
             day__in=days,
             is_available=True,
             is_reserved=False,
-        )
+        ).order_by('day__date','start_time')
 
         return available_time_slots
 
@@ -57,3 +70,81 @@ class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
 class DiscussionThemesView(generics.ListCreateAPIView):
     queryset = DiscussionTheme.objects.all()
     serializer_class = DiscussionThemeSerializer
+
+
+class CompanyFormView(generics.CreateAPIView):
+    serializer_class = CompanyFormSerializer
+
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+
+            # получаем данные формы
+            name = serializer.validated_data.get('name')
+            email = serializer.validated_data.get('email')
+            phone = serializer.validated_data.get('phone')
+            company_name = serializer.validated_data.get('company_name')
+            company_size = serializer.validated_data.get('company_size')
+
+            # отправляем письмо на почту клиента
+            send_mail(
+                'Спасибо за вопрос',
+                f'Здравствуйте, {name}.\n\nБлагодарим вас за обращение. В ближайшее время с вами свяжутся.\n\nС наилучшими пожеланиями,\n\nЛюдмила Юрьевна.',
+                'info@nikolaevaly.ru',
+                [email],
+                fail_silently=False,
+            )
+
+            # отправляем письмо на почту психолога
+            send_mail(
+                f'Новая заявка на индивидуальное предложение для компании от {name}',
+                f'Имя: {name},\nEmail: {email},\nТелефон: {phone},\nКомпания: {company_name},\nРазмер компании: {company_size}',
+                'info@nikolaevaly.ru',
+                ['info@nikolaevaly.ru'],
+                fail_silently=False,
+            )
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class QuestionView(generics.CreateAPIView):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+
+            name = serializer.validated_data.get('name')
+            email = serializer.validated_data.get('email')
+            messenger = serializer.validated_data.get('messenger')
+            messenger_contact = serializer.validated_data.get('messenger_contact')
+            question = serializer.validated_data.get('question')
+
+
+            if email:
+                # отправляем письмо на почту клиента
+                send_mail(
+                    'Спасибо за вопрос',
+                    f'Здравствуйте, {name}.\n\nБлагодарим вас за обращение. В ближайшее время с вами свяжутся.\n\nС наилучшими пожеланиями,\n\nЛюдмила Юрьевна.',
+                    'info@nikolaevaly.ru',
+                    [email],
+                    fail_silently=False,
+                )
+
+            # Отправка email на почту психолога
+            send_mail(
+                'Новый вопрос от пользователя',
+                f'''Имя: {name},\n{messenger}: {messenger_contact},\nВопрос: {question}''',
+                'info@nikolaevaly.ru',
+                ['info@nikolaevaly.ru'],
+                fail_silently=False,
+            )
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

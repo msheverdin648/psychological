@@ -20,8 +20,19 @@
 }
 
 .input {
+    width: 100%;
+}
+
+.column {
     margin: 8px;
-    flex-grow: 1;
+    flex: 1 1 50%;
+}
+
+.error {
+    display: block;
+    color: red;
+    margin-top: 10px;
+    padding-left: 20px;
 }
 
 .row {
@@ -41,6 +52,10 @@
 
 .policy a {
     color: var(--color-blue);
+}
+
+.icon {
+    fill: #000;
 }
 
 @media screen and (max-width: 1560px) {
