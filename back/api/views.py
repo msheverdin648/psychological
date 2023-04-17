@@ -142,7 +142,8 @@ class QuestionView(generics.CreateAPIView):
                 'Новый вопрос от пользователя',
                 f'''Имя: {name},\n{messenger}: {messenger_contact},\nВопрос: {question}''',
                 'info@nikolaevaly.ru',
-                ['info@nikolaevaly.ru'],
+                # ['info@nikolaevaly.ru'],
+                ['msheverdin648@gmail.com'],
                 fail_silently=False,
             )
             return Response(serializer.data, status=status.HTTP_201_CREATED)
