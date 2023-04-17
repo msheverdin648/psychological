@@ -74,6 +74,8 @@ class DiscussionThemesView(generics.ListCreateAPIView):
 
 class CompanyFormView(generics.CreateAPIView):
     serializer_class = CompanyFormSerializer
+    csrf_exempt = True
+
 
 
     def post(self, request, *args, **kwargs):
@@ -114,6 +116,8 @@ class CompanyFormView(generics.CreateAPIView):
 class QuestionView(generics.CreateAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+    csrf_exempt = True
+
 
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
