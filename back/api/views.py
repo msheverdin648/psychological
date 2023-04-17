@@ -86,7 +86,7 @@ class CompanyFormView(generics.CreateAPIView):
             # отправляем письмо на почту клиента
             send_mail(
                 'Спасибо за вопрос',
-                f'Здравствуйте, {name}.\n\nБлагодарим вас за обращение. В ближайшее время с вами свяжутся.\n\nС наилучшими пожеланиями,\n\nЛюдмила Юрьевна.',
+                f'Здравствуйте, {name}.\n\nБлагодарим вас за обращение. В ближайшее время с вами свяжутся.\n\nС наилучшими пожеланиями,\nЛюдмила Юрьевна.',
                 'info@nikolaevaly.ru',
                 [email],
                 fail_silently=False,
@@ -126,7 +126,7 @@ class QuestionView(generics.CreateAPIView):
                 # отправляем письмо на почту клиента
                 send_mail(
                     'Спасибо за вопрос',
-                    f'Здравствуйте, {name}.\n\nБлагодарим вас за обращение. В ближайшее время с вами свяжутся.\n\nС наилучшими пожеланиями,\n\nЛюдмила Юрьевна.',
+                    f'Здравствуйте, {name}.\n\nБлагодарим вас за обращение. В ближайшее время с вами свяжутся.\n\nС наилучшими пожеланиями,\nЛюдмила Юрьевна.',
                     'info@nikolaevaly.ru',
                     [email],
                     fail_silently=False,
@@ -137,8 +137,7 @@ class QuestionView(generics.CreateAPIView):
                 'Новый вопрос от пользователя',
                 f'''Имя: {name},\n{messenger}: {messenger_contact},\nВопрос: {question}''',
                 'info@nikolaevaly.ru',
-                # ['info@nikolaevaly.ru'],
-                ['msheverdin648@gmail.com'],
+                ['info@nikolaevaly.ru'],
                 fail_silently=False,
             )
             return Response(serializer.data, status=status.HTTP_201_CREATED)

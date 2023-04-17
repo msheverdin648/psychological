@@ -75,8 +75,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
             f'Запись на прием {time_slot_data.start_time.strftime("%d.%m.%Y  %H:%M")} {client_data["name"]}',
             f'Имя: {client_data["name"]},\nEmail: {client_data["email"]},\nТелефон: {client_data["phone"]}',
             'info@nikolaevaly.ru',
-            # ['info@nikolaevaly.ru'],
-            ['msheverdin648@gmail.com'],
+            ['info@nikolaevaly.ru'],
             fail_silently=False,
         )
         
