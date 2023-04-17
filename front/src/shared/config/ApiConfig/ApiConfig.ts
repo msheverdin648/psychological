@@ -4,3 +4,6 @@
 export const baseUrl  = 'https://nikolaevaly.ru/api/v1'
 // export const baseUrl = 'http://localhost:8000/api/v1'
 
+
+export const csrfToken = document.cookie.match(/csrftoken=([\w-]+)/)?.[1]
+
