@@ -1,6 +1,7 @@
 from rest_framework import generics
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from django.core.mail import send_mail
 from rest_framework.response import Response
 from rest_framework import status
@@ -54,14 +55,14 @@ class AvailableTimeSlotList(generics.ListAPIView):
 
         return available_time_slots
 
-@csrf_exempt
+@method_decorator(csrf_exempt, name='dispatch')
 class AppointmentView(generics.ListCreateAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
     csrf_exempt = True
     
 
-@csrf_exempt
+@method_decorator(csrf_exempt, name='dispatch')
 class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentDetailSerializer
@@ -111,7 +112,7 @@ class CompanyFormView(generics.CreateAPIView):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-@csrf_exempt
+@method_decorator(csrf_exempt, name='dispatch')
 class QuestionView(generics.CreateAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
