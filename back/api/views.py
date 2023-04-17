@@ -76,8 +76,6 @@ class CompanyFormView(generics.CreateAPIView):
     serializer_class = CompanyFormSerializer
     csrf_exempt = True
 
-
-
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
