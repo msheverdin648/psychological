@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.db import models
-from django.forms import TimeInput
+from django.utils import timezone
+
  
 from .models import DiscussionTheme, Day, TimeSlot, Client, Appointment, CompanyRequest, Question
 
@@ -22,11 +22,11 @@ class TimeSlotAdmin(admin.ModelAdmin):
 
     def formatted_start_time(self, obj):
         # Форматирование времени начала слота
-        return obj.start_time.strftime('%H:%M')
+        return timezone.localtime(obj.start_time).strftime("%H:%M")
 
     def formatted_end_time(self, obj):
         # Форматирование времени окончания слота
-        return obj.end_time.strftime('%H:%M')
+        return timezone.localtime(obj.end_time).strftime("%H:%M")
     
     formatted_start_time.admin_order_field = 'start_time'
     formatted_start_time.short_description = 'Время начала сеанса'  # Задаем название колонки в админке

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Day, TimeSlot, Appointment, DiscussionTheme, Client, CompanyRequest, Question
 from django.core.mail import send_mail
+from django.utils import timezone
 
 
 
@@ -60,11 +61,12 @@ class AppointmentSerializer(serializers.ModelSerializer):
         time_slot_data.is_reserved = True
         time_slot_data.save()
 
+        start_time = timezone.localtime(time_slot_data.start_time).strftime("%d.%m.%Y  %H:%M")
 
         # отправляем письмо на почту клиента
         send_mail(
-            'Спасибо за вопрос',
-            f'Здравствуйте, {client_data["name"]}.\nХотим сообщить, что вы были успешно записаны на прием, который запланирован на {time_slot_data.start_time.strftime("%d.%m.%Y  %H:%M")}. \nДля подтверждения вашего приема, просим вас осуществить оплату размере 5.000 рублей, в течение 15 минут на карту: 00000000. \n\nС наилучшими пожеланиями,\nЛюдмила Юрьевна.',
+            f'Запись на прием к психологу на {start_time}',
+            f'Здравствуйте, {client_data["name"]}.\nХотим сообщить, что вы были успешно записаны на прием, который запланирован на {start_time}. \nДля подтверждения вашего приема, просим вас осуществить оплату размере 5.000 рублей, в течение 15 минут на карту: 2200 7007 9887 1363, Людмила Н. Банк Тинькофф.\n\nС наилучшими пожеланиями,\nЛюдмила Юрьевна.',
             'info@nikolaevaly.ru',
             [client_data["email"]],
             fail_silently=False,
@@ -72,7 +74,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
 
         # отправляем письмо на почту психолога
         send_mail(
-            f'Запись на прием {time_slot_data.start_time.strftime("%d.%m.%Y  %H:%M")} {client_data["name"]}',
+            f'Запись на прием {start_time} {client_data["name"]}',
             f'Имя: {client_data["name"]},\nEmail: {client_data["email"]},\nТелефон: {client_data["phone"]}',
             'info@nikolaevaly.ru',
             ['info@nikolaevaly.ru'],

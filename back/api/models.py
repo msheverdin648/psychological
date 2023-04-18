@@ -1,5 +1,7 @@
 from django.db import models
 import locale
+from django.utils import timezone
+
 
 # Устанавливаем локаль на русскую
 # locale.setlocale(locale.LC_TIME, 'ru_RU')
@@ -40,7 +42,10 @@ class TimeSlot(models.Model):
         verbose_name_plural = "Слоты для записи"
 
     def __str__(self):
-        return f'с {self.start_time.strftime("%H:%M")} До {self.end_time.strftime("%H:%M")} | Дата: {self.start_time.strftime("%d %b, %a")}'
+        start_time = timezone.localtime(self.start_time).strftime("%H:%M")
+        end_time = timezone.localtime(self.end_time).strftime("%H:%M")
+        date = timezone.localtime(self.start_time).strftime("%d %b, %a")
+        return f'с {start_time} До {end_time} | Дата: {date}'
     
 
 
