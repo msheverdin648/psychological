@@ -12,12 +12,15 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { DiscussionReducer, DiscussionThemesReducer, DiscussionDateReducer, discussionDateApi, discussionThemesApi} from 'enteties/Discussion'
+import { PopupReduser } from 'enteties/Popup';
+
 
 const rootReducer = combineReducers({
     ServicesReduser,
     DiscussionReducer,
     DiscussionThemesReducer,
     DiscussionDateReducer,
+    PopupReduser,
     [discussionDateApi.reducerPath]: discussionDateApi.reducer,
     [discussionThemesApi.reducerPath]: discussionThemesApi.reducer
 })

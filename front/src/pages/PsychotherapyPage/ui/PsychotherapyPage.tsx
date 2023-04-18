@@ -11,6 +11,8 @@ import { ChangeNowBlock } from 'widgets/ChangeNowBlock';
 import { ServicesBlock } from 'widgets/ServicesBlock';
 import { Discussion } from 'enteties/Discussion';
 import { iconPosition } from 'widgets/CanHelpBlock/models/types';
+import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { PopupList, PopupSlice } from 'enteties/Popup';
 
 interface PsychotherapyPageProps {
     className?: string;
@@ -91,6 +93,8 @@ const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
         },
     ]
 
+    const dispatch = useAppDispatch()
+
     return (
         <div className={classNames(cls.psychotherapyPage, {}, [className ?? ''])}>
             <CanHelpBlock firstCircleCards={firstCircleCards} secondCircleCards={secondCircleCards}/>
@@ -106,7 +110,11 @@ const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
                 <span className={cls.icon}>🎁</span>
                 <h3 className={cls.subtitle}>Подарочный сертификат</h3>
                 <p className={cls.text}>Переписка или видеоконсультация вы определите сами </p>
-                <Button theme={ButtonTheme.GREEN} className={cls.button}>
+                <Button 
+                    theme={ButtonTheme.GREEN} 
+                    className={cls.button} 
+                    onClick={()=>dispatch(PopupSlice.actions.openPopup(PopupList.FEEDBACK))}
+                >
                     Заказать сертификат
                 </Button>
             </Banner>

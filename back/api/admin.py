@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils import timezone
 
  
-from .models import DiscussionTheme, Day, TimeSlot, Client, Appointment, CompanyRequest, Question
+from .models import DiscussionTheme, Day, TimeSlot, Client, Appointment, CompanyRequest, Question, CertificateRequest
 
 class TimeSlotInline(admin.TabularInline):
     model = TimeSlot
@@ -56,6 +56,14 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'messenger', 'messenger_contact')
     search_fields = ('name', 'messenger', 'messenger_contact')
 
+
+@admin.register(CertificateRequest)
+class CertificateRequestAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'phone')
+    list_filter = ('created_at',)
+    search_fields = ('name', 'email', 'phone')
+    date_hierarchy = 'created_at'
+    ordering = ('-created_at',)
 
 
 admin.site.register(DiscussionTheme, DiscussionThemeAdmin)

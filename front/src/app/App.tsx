@@ -13,11 +13,12 @@ import { persistor, store } from './store/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import './styles/index.scss'
 import { MenuBurger } from 'widgets/MenuBurger/MenuBurger';
+import { PopupWrapper } from 'widgets/Popup/PopupWrapper/PopupWrapper';
+import { useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 
 function App() {
 
     const location = useLocation()
-    
 
     useEffect(
         ()=>{
@@ -37,6 +38,7 @@ function App() {
                             <div>
                                 <Header />
                                 <MenuBurger />
+                                <PopupWrapper />
                             </div>
                             <AppRouter />
                             <Footer />

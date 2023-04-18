@@ -8,6 +8,7 @@ import { Select } from 'shared/ui/Select/Select';
 import { useState } from 'react';
 import { useGetUrl } from 'shared/hooks/useGetUrl/useGetUrl';
 import { sendForm } from 'shared/lib/handlers/sendForm';
+import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
 
 interface QuestionFormProps {
     className?: string;
@@ -143,8 +144,18 @@ export const QuestionForm: React.FC<QuestionFormProps> = (props) => {
             </div>
             <Button theme={ButtonTheme.BLUE} className={cls.button}>Отправить вопрос</Button>
             <div className={cls.policy}>
-                Нажимая на кнопку, вы соглашаетесь на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a>
+                <Controller 
+                    name="question_agree" 
+                    control={control} 
+                    rules={{
+                        required: 'Подтвердите согласие с условиями обработки персональных данных',
+                    }}
+
+                    render={ ({field})=> <Checkbox {...field} id='question_agree' className={cls.checkbox} />} 
+                />
+                <label htmlFor={'question_agree'}>Согласен с условиями обработки персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></label>
             </div>
+            <span className={cls.error}><>{errors.question_agree && errors.question_agree.message }</></span>
         </form>
     );
 }

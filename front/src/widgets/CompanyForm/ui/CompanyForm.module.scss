@@ -77,8 +77,14 @@
 
 .policy {
     font: var(--font-m);
-    display: block;
+    display: flex;
+    align-items: baseline;
     margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.policy label {
+    cursor: pointer;
 }
 
 .policy a:hover {
@@ -89,6 +95,10 @@
     padding-left: 30px;
     margin-bottom: 10px;
     color: red;
+}
+
+.checkbox {
+    margin-right: 10px;
 }
 
 

@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { DiscussionSlice } from 'enteties/Discussion/redux/DiscussionSlice';
 import { ChoseExperience } from '../ChoseExperience/ChoseExperience';
-import { FeedbackForm } from '../FeedbackForm/FeedbackForm';
 import { ChoseDiscussionDate } from '../ChoseDiscussionDate/ChoseDiscussionDate';
+import { DisscussionFeedbackForm } from '../DisscussionFeedbackForm/DisscussionFeedbackForm';
 
 interface DiscussionFormProps {
     className?: string;
@@ -46,7 +46,7 @@ export const DiscussionForm: React.FC<DiscussionFormProps> = (props) => {
                             :
                             curPage === totalPages
                                 ?
-                                <FeedbackForm className={cls.form}/>
+                                <DisscussionFeedbackForm className={cls.form}/>
                                 :
                                 null
             }

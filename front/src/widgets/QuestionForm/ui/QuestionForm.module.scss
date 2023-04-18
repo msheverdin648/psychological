@@ -46,8 +46,15 @@
 }
 
 .policy {
+    display: flex;
+    align-items: baseline;
     text-align: center;
     font: var(--font-m);
+    cursor: pointer;
+}
+
+.policy label {
+    cursor: pointer;
 }
 
 .policy a {

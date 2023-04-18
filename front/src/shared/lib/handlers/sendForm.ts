@@ -7,6 +7,6 @@ export function sendForm(data: any, url: string){
     axios.defaults.headers.common['X-CSRFToken'] = csrfToken;
 
     axios.post(url, data)
-        .then(res => console.log(res))
+        // .then(res => console.log(res))
         .catch(err => console.log(err))
 }

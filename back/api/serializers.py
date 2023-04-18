@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Day, TimeSlot, Appointment, DiscussionTheme, Client, CompanyRequest, Question
+from .models import Day, TimeSlot, Appointment, DiscussionTheme, Client, CompanyRequest, Question, CertificateRequest
 from django.core.mail import send_mail
 from django.utils import timezone
 
@@ -105,3 +105,8 @@ class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = '__all__'
+
+class CertificateRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CertificateRequest
+        fields = ('name', 'email', 'phone')

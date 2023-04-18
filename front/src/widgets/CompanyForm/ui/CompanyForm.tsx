@@ -6,6 +6,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { RadioGroup } from 'widgets/RadioGroup/RadioGroup';
 import { useGetUrl } from 'shared/hooks/useGetUrl/useGetUrl';
 import { sendForm } from 'shared/lib/handlers/sendForm';
+import { Checkbox } from 'shared/ui/Checkbox/Checkbox';
 
 interface CompanyFormProps {
     className?: string;
@@ -110,10 +111,22 @@ export const CompanyForm: React.FC<CompanyFormProps> = (props) => {
                     />
                 </div>
                 <Button theme={ButtonTheme.BLUE}>Отправить заявку</Button>
+
                 <p className={cls.policy}>
-                    Нажимая кнопку “Отправить заявку”, 
-                    Вы соглашаетесь с <a href="#">условиями обработки персональных данных</a>
+                    <Controller 
+                        name="company_agree" 
+                        control={control} 
+                        rules={{
+                            required: 'Подтвердите согласие с условиями обработки персональных данных',
+                        }}
+
+                        render={ ({field})=> <Checkbox {...field} id='company_agree' className={cls.checkbox} />} 
+                    />
+                    <label htmlFor={'company_agree'}>Согласен с <a href="#">условиями обработки персональных данных</a></label>
                 </p>
+                <span className={cls.error}><>{errors.company_agree && errors.company_agree.message }</></span>
+
+
             </form>
         </div>
     );

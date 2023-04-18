@@ -10,7 +10,8 @@ from .models import (
     Client,
     Appointment,
     DiscussionTheme,
-    Question
+    Question,
+    CertificateRequest
 )
 from .serializers import (
     DaySerializer,
@@ -19,7 +20,8 @@ from .serializers import (
     AppointmentDetailSerializer,
     DiscussionThemeSerializer,
     CompanyFormSerializer,
-    QuestionSerializer
+    QuestionSerializer,
+    CertificateRequestSerializer
 )
 
 
@@ -143,3 +145,35 @@ class QuestionView(generics.CreateAPIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+class CertificateRequestView(generics.CreateAPIView):
+    queryset = CertificateRequest.objects.all()
+    serializer_class = CertificateRequestSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+
+            name = serializer.validated_data.get('name')
+            email = serializer.validated_data.get('email')
+            phone = serializer.validated_data.get('phone')
+            # отправляем письмо на почту клиента
+            send_mail(
+                'Заявление на сертификат',
+                f'Здравствуйте, {name}.\n\nБлагодарим вас за обращение. В ближайшее время с вами свяжутся.\n\nС наилучшими пожеланиями,\nЛюдмила Юрьевна.',
+                'info@nikolaevaly.ru',
+                [email],
+                fail_silently=False,
+            )
+
+            # Отправка email на почту психолога
+            send_mail(
+                'Запрос на сертификат',
+                f'''Имя: {name},\nEmail: {email},\nТелефон: {phone}''',
+                'info@nikolaevaly.ru',
+                ['info@nikolaevaly.ru'],
+                fail_silently=False,
+            )
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

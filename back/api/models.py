@@ -103,3 +103,19 @@ class Question(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+
+class CertificateRequest(models.Model):
+    name = models.CharField(verbose_name='Имя', max_length=255)
+    email = models.EmailField(verbose_name='Email')
+    phone = models.CharField(verbose_name='Телефон', max_length=20)
+    created_at = models.DateTimeField(verbose_name="Дата создания заявки", auto_now_add=True)
+
+
+    class Meta:
+        verbose_name = 'Заявка на сертификат'
+        verbose_name_plural = 'Заявки на сертификаты'
+
+    def __str__(self):
+        return self.name

@@ -1,7 +1,6 @@
 .inputs {
     display: flex;
     flex-direction: column;
-    width: 50%;
     margin: 20px auto 0 auto
 }
 
@@ -29,22 +28,35 @@
     color: red;
     padding-left: 30px;
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 .privacy {
-    margin: 32px 0 58px 0;
+    margin: 32px 0 0 0;
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
 }
 
-.privacy > a {
+.privacy label{
+    cursor: pointer;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.privacy  a {
     color: var(--color-blue);
     text-decoration: none;
 }
-.privacy > a:hover {
+.privacy a:hover {
     text-decoration: underline;
 }
 
 .button {
     align-self: center;
+    margin-top: 58px;
 }
 
 
