@@ -2,6 +2,20 @@
     width: 50%;
 }
 
+.title {
+    font: var(--font-xl);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.subTitle {
+    font: var(--font-l);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--color-blue);
+    text-align: center;
+}
+
 @media screen and (max-width: 980px) {
     .form {
         width: 100%;

@@ -50,6 +50,7 @@ export const DiscussionForm: React.FC<DiscussionFormProps> = (props) => {
                                 :
                                 null
             }
+
         </div>
     );
 }

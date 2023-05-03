@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ChoseDiscussionTheme.module.scss';
-import { DiscussionNav } from '../DiscussionNav/DiscussionNav';
 import { DiscussionTheme } from '../DiscussionTheme/DiscussionTheme';
 import { useAppSelector } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { discussionThemesApi } from 'enteties/Discussion/api/DiscussionThemesApi';
@@ -22,7 +21,8 @@ export const ChoseDiscussionTheme: React.FC<ChoseDiscussionThemeProps> = (props)
 
     return (
         <div className={classNames(cls.choseDiscussionTheme, {}, [className ?? '' ])}>
-            <DiscussionNav title='Что бы вы хотели обсудить?' subTitle='Запишитесь сейчас' />
+            <h2 className={cls.title}>Что бы вы хотели обсудить?</h2>
+            <h3 className={cls.subTitle}>Запишитесь сейчас</h3> 
             <div className={cls.cards}>
                 {
                     cards?.slice((curPage-1)*10, (curPage-1)*10+10) .map((card, index)=>(

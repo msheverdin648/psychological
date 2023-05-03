@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { DiscussionReducer, DiscussionThemesReducer, DiscussionDateReducer, discussionDateApi, discussionThemesApi} from 'enteties/Discussion'
 import { PopupReduser } from 'enteties/Popup';
+import { tariffsApi } from 'enteties/Tariffs';
 
 
 const rootReducer = combineReducers({
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     DiscussionDateReducer,
     PopupReduser,
     [discussionDateApi.reducerPath]: discussionDateApi.reducer,
-    [discussionThemesApi.reducerPath]: discussionThemesApi.reducer
+    [discussionThemesApi.reducerPath]: discussionThemesApi.reducer,
+    [tariffsApi.reducerPath]: tariffsApi.reducer
 })
 
 
@@ -46,6 +48,7 @@ const setupStore = () => {
             })
                 .concat(discussionDateApi.middleware)
                 .concat(discussionThemesApi.middleware)
+                .concat(tariffsApi.middleware)
     })
 }  
 

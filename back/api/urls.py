@@ -12,4 +12,5 @@ urlpatterns = [
     path('company-form/', views.CompanyFormView.as_view()),
     path('contact-psychologist/', views.QuestionView.as_view()),
     path('certificate-form/', views.CertificateRequestView.as_view()),
+     path('tariffs/', views.TariffListCreateAPIView.as_view()),
 ]

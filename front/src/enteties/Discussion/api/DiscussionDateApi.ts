@@ -1,10 +1,10 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/dist/query/react'
-import { IAppointment, ITimeSlot } from '../models/types'
+import { IAppointment, IDay, ITimeSlot } from '../models/types'
 import { baseUrl, csrfToken } from 'shared/config/ApiConfig/ApiConfig'
 
 
 
-export const discussionDateApi =  createApi({
+export const    discussionDateApi =  createApi({
     reducerPath: 'discussionDateApi',
     baseQuery: fetchBaseQuery({
         baseUrl: baseUrl,
@@ -17,6 +17,11 @@ export const discussionDateApi =  createApi({
         fetchAvailableDates: build.query<ITimeSlot[], any>({
             query: () => ({
                 url: '/days-available'
+            })
+        }),
+        fetchDays: build.query<IDay[], any>({
+            query: () => ({
+                url: '/days'
             })
         }),
         sendAppointment: build.mutation<IAppointment, any>({

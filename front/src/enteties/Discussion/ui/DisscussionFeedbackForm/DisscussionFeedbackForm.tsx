@@ -49,7 +49,8 @@ export const DisscussionFeedbackForm: React.FC<FeedbackFormProps> = (props) => {
     
     return (
         <div className={classNames(cls.feedbackForm, {}, [className ?? '' ])}>
-            <DiscussionNav title='Как с вами связаться?'/>
+            <h2 className={cls.title}>Как с вами связаться?</h2>
+            <h3 className={cls.subTitle}><span style={{opacity: 0}}>Empty</span></h3> 
             <FeedbackForm submit={submitForm} className={cls.form} />
         </div>
     );

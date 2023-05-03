@@ -17,7 +17,8 @@ export const ChoseExperience: React.FC<ChoseExperienceProps> = (props) => {
 
     return (
         <div className={classNames(cls.choseExperience, {}, [className ?? '' ])}>
-            <DiscussionNav title='Был ли у вас ранее опыт терапии?'/>
+            <h2 className={cls.title}>Был ли у вас ранее опыт терапии?</h2>
+            <h3 className={cls.subTitle}><span style={{opacity: 0}}>Empty</span></h3> 
             <div className={cls.buttons}> 
                 <Button 
                     theme={ButtonTheme.BORDERED} 

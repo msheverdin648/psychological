@@ -11,7 +11,8 @@ from .models import (
     Appointment,
     DiscussionTheme,
     Question,
-    CertificateRequest
+    CertificateRequest,
+    Tariff
 )
 from .serializers import (
     DaySerializer,
@@ -21,7 +22,8 @@ from .serializers import (
     DiscussionThemeSerializer,
     CompanyFormSerializer,
     QuestionSerializer,
-    CertificateRequestSerializer
+    CertificateRequestSerializer,
+    TariffSerializer
 )
 
 
@@ -177,3 +179,7 @@ class CertificateRequestView(generics.CreateAPIView):
             )
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class TariffListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Tariff.objects.all()
+    serializer_class = TariffSerializer

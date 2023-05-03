@@ -13,12 +13,18 @@ export interface IDiscussionDateCard {
     time: string;
 }
 
+
+export interface IDay {
+    id: number;
+    date: string;
+    time_slots: ITimeSlot[];
+}
+
+
 export interface ITimeSlot {
     id: number;
     start_time: string;
     end_time: string;
-
-
 }
 
 export interface FeedbackFormState {
