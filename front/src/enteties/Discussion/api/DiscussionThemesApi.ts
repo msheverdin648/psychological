@@ -11,7 +11,7 @@ export const discussionThemesApi =  createApi({
 
     }),
     endpoints: (build) => ({
-        fetchAvailableThemes: build.query<IDiscussionThemes[], any>({
+        fetchThemes: build.query<IDiscussionThemes[], any>({
             query: () => ({
                 url: '/discussion-themes'
             })

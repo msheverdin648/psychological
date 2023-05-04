@@ -7,6 +7,7 @@ import { DiscussionSlice } from 'enteties/Discussion/redux/DiscussionSlice';
 import { ChoseExperience } from '../ChoseExperience/ChoseExperience';
 import { ChoseDiscussionDate } from '../ChoseDiscussionDate/ChoseDiscussionDate';
 import { DisscussionFeedbackForm } from '../DisscussionFeedbackForm/DisscussionFeedbackForm';
+import { discussionThemesApi } from 'enteties/Discussion/api/DiscussionThemesApi';
 
 interface DiscussionFormProps {
     className?: string;
@@ -16,7 +17,7 @@ export const DiscussionForm: React.FC<DiscussionFormProps> = (props) => {
     const { className } = props;
 
     const dispatch = useAppDispatch() 
-    const { cards } = useAppSelector(state => state.DiscussionThemesReducer)
+    const { data: cards} = discussionThemesApi.useFetchThemesQuery('')
     const { curPage, totalPages, fixedPagesCount } = useAppSelector(state => state.DiscussionReducer)
 
 
@@ -24,8 +25,10 @@ export const DiscussionForm: React.FC<DiscussionFormProps> = (props) => {
 
     useEffect(
         ()=>{
-            dispatch(DiscussionSlice.actions.setPagesCount(cards.length)) 
-        },[cards.length]
+            if(cards){
+                dispatch(DiscussionSlice.actions.setPagesCount(cards.length)) 
+            }
+        },[cards?.length]
     )
 
 

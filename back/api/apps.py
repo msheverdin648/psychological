@@ -6,7 +6,7 @@ class ApiConfig(AppConfig):
     name = 'api'
 
     # def ready(self):
-    #     from .utils import generate_slots, clear_slots
-    #     generate_slots()
+    #     from .utils import generate_slots_for_week, clear_slots
+    #     generate_slots_for_week()
     #     clear_slots()
     

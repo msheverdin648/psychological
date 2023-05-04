@@ -16,7 +16,7 @@ export const ChoseDiscussionTheme: React.FC<ChoseDiscussionThemeProps> = (props)
 
     const { discussion_themes } = useAppSelector(state => state.DiscussionReducer)
     // const {cards}  = useAppSelector(state => state.DiscussionThemesReducer)
-    const {data: cards}  = discussionThemesApi.useFetchAvailableThemesQuery('')
+    const {data: cards}  = discussionThemesApi.useFetchThemesQuery('')
     const { curPage }  = useAppSelector(state => state.DiscussionReducer)
 
     return (

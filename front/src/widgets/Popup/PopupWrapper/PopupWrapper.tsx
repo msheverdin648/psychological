@@ -19,7 +19,6 @@ export const PopupWrapper: React.FC<PopupWrapperProps> = (props) => {
 
     function clickWrapperHandler(e: any){
         e.stopPropagation()
-        console.log('qwe')
         dispatch(PopupSlice.actions.closePopup())
     }
 
