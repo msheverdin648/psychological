@@ -126,6 +126,7 @@ class Tariff(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название тарифа')
     discount = models.PositiveIntegerField(verbose_name='Скидка в %', blank=True, null=True)
     info = models.CharField(max_length=255, verbose_name='Информация о тарифе', blank=True, null=True)
+    sessions = models.PositiveIntegerField(verbose_name='Кол-во сессий', default=0)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     class Meta:

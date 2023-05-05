@@ -50,13 +50,13 @@ export interface IClient{
 }
 
 export interface IAppointment {
-    discussion_themes: number[];
+    discussion_theme: number | undefined;
     time_slot: number;
     client: IClient;
 }
 
 export interface DiscussionState {
-    discussion_themes: IDiscussionThemes[];
+    discussion_theme: IDiscussionThemes | null;
     time_slot: IDiscussionDateCard | null;
     client: IClient;
     totalPages: number;

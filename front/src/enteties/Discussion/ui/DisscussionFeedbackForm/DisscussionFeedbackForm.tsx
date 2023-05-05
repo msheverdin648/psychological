@@ -37,7 +37,7 @@ export const DisscussionFeedbackForm: React.FC<FeedbackFormProps> = (props) => {
                     'experience': discussion.client.experience
                 },
                 time_slot: discussion.time_slot.id,
-                discussion_themes: discussion.discussion_themes.map(item => item.id)    
+                discussion_theme: discussion.discussion_theme?.id 
             }
             sendAppointment(formData)
             dispatch(DiscussionSlice.actions.resetState())

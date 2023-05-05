@@ -6,4 +6,5 @@ export interface ITariff {
     prev_price: number;
     discount?: number;
     info?: string;
+    sessions: number;
 }

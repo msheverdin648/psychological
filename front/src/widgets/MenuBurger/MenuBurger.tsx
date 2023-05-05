@@ -26,11 +26,11 @@ export const MenuBurger: React.FC<MenuBurgerProps> = (props) => {
                 </div>
             </div>
             <div className={classNames(cls.navigateContent, {[cls.opened]: isActive}, [])}>
-                <CustomLink className={cls.link} to='/' clickHandler={()=>setIsActive(false)} >Для бизнеса</CustomLink>
-                <CustomLink className={cls.link} to='/psychotherapy' clickHandler={()=>setIsActive(false)}>Психотерапия</CustomLink>
+                <CustomLink className={cls.link} to='/' clickHandler={()=>setIsActive(false)} >Психотерапия</CustomLink>
+                <CustomLink className={cls.link} to='/for-business' clickHandler={()=>setIsActive(false)}>Для бизнеса</CustomLink>
                 <CustomLink className={cls.link} to='/about' clickHandler={()=>setIsActive(false)}>Обо мне</CustomLink>
-                <CustomLink className={cls.link} to='/psychotherapy#services' clickHandler={()=>setIsActive(false)}>Все услуги</CustomLink>
-                <CustomLink className={cls.link} to='/psychotherapy#certificates' clickHandler={()=>setIsActive(false)}>Подарочные сертификаты </CustomLink>
+                <CustomLink className={cls.link} to='/#services' clickHandler={()=>setIsActive(false)}>Все услуги</CustomLink>
+                <CustomLink className={cls.link} to='/#certificates' clickHandler={()=>setIsActive(false)}>Подарочные сертификаты </CustomLink>
                 <CustomLink className={cls.link} to='/#contacts' clickHandler={()=>setIsActive(false)}>Контакты</CustomLink>
             </div>  
         </header>

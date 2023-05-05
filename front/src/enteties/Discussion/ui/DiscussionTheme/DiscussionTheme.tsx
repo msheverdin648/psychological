@@ -19,11 +19,15 @@ export const DiscussionTheme: React.FC<DiscussionThemesProps> = (props) => {
 
     const dispatch = useAppDispatch()
    
+    function clickHandler(){
+        dispatch(DiscussionSlice.actions.setDiscussionTheme(card))
+        dispatch(DiscussionSlice.actions.increaseCurPage())
+    }
     
     return (
         <span 
             className={classNames(cls.discussionTheme, {[cls.active]: active}, [className ?? '' ])} 
-            onClick={()=>dispatch(DiscussionSlice.actions.toggleCard(card))}>
+            onClick={()=>clickHandler()}>
             { card.name }
         </span>
     );

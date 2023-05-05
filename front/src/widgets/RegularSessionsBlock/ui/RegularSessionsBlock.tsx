@@ -60,7 +60,7 @@ export const RegularSessionsBlock: React.FC<RegularSessionsBlockProps> = (props)
                             ))
                         }
                     </div>
-                    <Button theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Хочу обсудить свою ситуацию</Button>
+                    <Button theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/for-business#appointment')}}>Хочу обсудить свою ситуацию</Button>
                 </div>
             </div>
         </div>

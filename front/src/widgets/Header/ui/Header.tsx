@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
                     </Link>
                     <p className={cls.text}>Психоаналитическая психотерапия 🎯</p>
                     <a href='tel:+79675556819' className={cls.text}>+7 967 555 68 19</a>
-                    <Button theme={ButtonTheme.GREEN} onClick={()=>{navigate('/psychotherapy#appointment')}}>Записаться на прием</Button>
+                    <Button theme={ButtonTheme.GREEN} onClick={()=>{navigate('/#appointment')}}>Записаться на прием</Button>
                 </div>
             </div>
             <Navigate />

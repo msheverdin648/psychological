@@ -75,7 +75,7 @@ export const FamilyService: React.FC<FamilyServiceProps> = (props) => {
                         решить сложности в воспитании детей
                     </li>
                 </ul>
-                <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Записаться на консультацию</Button>
+                <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/for-business#appointment')}}>Записаться на консультацию</Button>
             </div>
             <div className={cls.block}>
                 <img src={Image} className={cls.img} alt="" />

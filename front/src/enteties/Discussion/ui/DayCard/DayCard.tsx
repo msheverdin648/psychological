@@ -2,8 +2,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './DayCard.module.scss';
 import { IDay } from 'enteties/Discussion/models/types';
 import { useState } from 'react';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
-import { DiscussionSlice } from 'enteties/Discussion/redux/DiscussionSlice';
 
 interface DayCardProps {
     className?: string;
@@ -13,7 +11,6 @@ interface DayCardProps {
 
 export const DayCard: React.FC<DayCardProps> = (props) => {
     const { 
-        className, 
         card, 
         isActive=false 
     } = props;

@@ -103,10 +103,10 @@ export const CompanyForm: React.FC<CompanyFormProps> = (props) => {
                             required: true
                         }}
                         options={[
-                            {label: 'Менее 100 сотрудников', value: 'Менее 100 сотрудников'},
-                            {label: 'От 100 до 500', value: 'От 100 до 500'},
-                            {label: 'От 500 до 1000', value: 'От 500 до 1000'},
-                            {label: 'Более 1000', value: 'Более 1000'},
+                            {label: 'Менее 5 сотрудников', value: 'Менее 5 сотрудников'},
+                            {label: 'От 5 до 10', value: 'От 5 до 10'},
+                            {label: 'От 10 до 20', value: 'От 10 до 20'},
+                            {label: 'Более 20', value: 'Более 20'},
                         ]}  
                     />
                 </div>

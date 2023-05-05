@@ -68,7 +68,7 @@ export const VisitService: React.FC<VisitServiceProps> = (props) => {
                     Район метро Лубянка<br/>
                     Станция метро: Лубянка
                 </p>
-                <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Записаться на консультацию</Button>
+                <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/for-business#appointment')}}>Записаться на консультацию</Button>
             </div>
             <div className={cls.block}>
                 <img src={Image} alt="" className={cls.img} />

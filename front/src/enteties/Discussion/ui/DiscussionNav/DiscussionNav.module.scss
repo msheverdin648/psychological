@@ -67,5 +67,24 @@
         justify-content: center;
         margin: 30px 0;
     }
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+    }
     
 }
+
+@media screen and (max-width: 681px) {
+
+    .arrow {
+        width: 35px;
+        height: 35px;
+    }
+
+    .pages {
+        font-size: 32px;
+    }
+    
+}
+

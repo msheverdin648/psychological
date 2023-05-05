@@ -4,12 +4,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { DiscussionState } from '../models/types';
-import { discussionDateApi } from '../api/DiscussionDateApi';
 
 
 const initialState: DiscussionState = {
-    discussion_themes: [
-    ],
+    discussion_theme: null,
     client: {
         email: '',
         experience: false,
@@ -29,12 +27,13 @@ export const DiscussionSlice = createSlice({
     initialState: initialState,
     name: 'discussion',
     reducers: {
-        toggleCard(state, action: PayloadAction<IDiscussionThemes, string>){
-            if(state.discussion_themes.find((card)=>card.name===action.payload.name)){
-                state.discussion_themes = state.discussion_themes.filter((card)=>card.name!==action.payload.name)
-            }else {
-                state.discussion_themes.push(action.payload)
-            }
+        setDiscussionTheme(state, action: PayloadAction<IDiscussionThemes, string>){
+            state.discussion_theme = action.payload
+            // if(state.discussion_themes.find((card)=>card.name===action.payload.name)){
+            //     state.discussion_themes = state.discussion_themes.filter((card)=>card.name!==action.payload.name)
+            // }else {
+            //     state.discussion_themes.push(action.payload)
+            // }
         },
         setPagesCount(state, action: PayloadAction<number, string> ){
             state.totalPages = Math.ceil(action.payload / 10) + state.fixedPagesCount
@@ -58,7 +57,7 @@ export const DiscussionSlice = createSlice({
         },
         resetState(state){
             state.time_slot = null
-            state.discussion_themes = []
+            state.discussion_theme = null
             state.curPage = 1
         }
 

@@ -35,11 +35,16 @@ export const TimeSlotCard: React.FC<TimeSlotCardProps> = (props) => {
 
     const dispatch = useAppDispatch()
 
+    function clickHandler(time_slot: any){
+        dispatch(DiscussionSlice.actions.setTimeSlot(time_slot))
+        dispatch(DiscussionSlice.actions.increaseCurPage())
+    }
+
     return (
         <div 
             className={classNames(cls.card, {[cls.active]: cardProps.id === time_slot?.id}, [])} 
             
-            onClick={()=>dispatch(DiscussionSlice.actions.setTimeSlot(cardProps))}
+            onClick={()=>clickHandler(cardProps)}
         >
             <span className={cls.date}>{cardProps.date}</span>
             <span className={cls.time}>{cardProps.time}</span>

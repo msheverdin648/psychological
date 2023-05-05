@@ -15,6 +15,13 @@ export const ChoseExperience: React.FC<ChoseExperienceProps> = (props) => {
     const { client } = useAppSelector(state => state.DiscussionReducer) 
     const dispatch = useAppDispatch()
 
+
+    function clickHandler(chose: boolean){
+        dispatch(DiscussionSlice.actions.setExperience(chose))
+        dispatch(DiscussionSlice.actions.increaseCurPage())
+    }
+
+
     return (
         <div className={classNames(cls.choseExperience, {}, [className ?? '' ])}>
             <h2 className={cls.title}>Был ли у вас ранее опыт терапии?</h2>
@@ -23,14 +30,14 @@ export const ChoseExperience: React.FC<ChoseExperienceProps> = (props) => {
                 <Button 
                     theme={ButtonTheme.BORDERED} 
                     className={classNames(cls.button, {[cls.active]: client.experience }, [])}
-                    onClick={()=>dispatch(DiscussionSlice.actions.setExperience(true))}
+                    onClick={()=>clickHandler(true)}
                 >
                     Да
                 </Button>
                 <Button 
                     theme={ButtonTheme.BORDERED} 
                     className={classNames(cls.button, {[cls.active]: !client.experience }, [])}
-                    onClick={()=>dispatch(DiscussionSlice.actions.setExperience(false))}
+                    onClick={()=>clickHandler(false)}
                 >
                     Нет
                 </Button>

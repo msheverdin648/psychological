@@ -34,6 +34,19 @@ export const TariffCard: React.FC<TariffCardProps> = (props) => {
             {
                 card.info && <span className={cls.info}>{card.info}</span> 
             }
+            <span className={cls.info}>{card.sessions} 
+                {
+                    card.sessions === 1
+                        ?
+                        ' сессия'
+                        :
+                        card.sessions > 1 && card.sessions < 5
+                            ?
+                            ' сессии'
+                            :
+                            ' сессий'
+                }
+            </span> 
         </div>
     );
 }

@@ -103,7 +103,7 @@ export const CanHelpBlock: React.FC<CanHelpBlockProps> = (props) => {
                                 ))
                             }
                             <span className={classNames(cls.card, {}, [cls.btn])}>
-                                <Button theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/psychotherapy#appointment')}}>Обсудить детали</Button>
+                                <Button theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/for-business#appointment')}}>Обсудить детали</Button>
                             </span>
                         </div>
                         
