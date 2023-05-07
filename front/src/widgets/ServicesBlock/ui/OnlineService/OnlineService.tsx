@@ -40,7 +40,7 @@ export const OnlineService: React.FC<OnlineServiceProps> = (props) => {
                     эмоциональных и психологических проблем, свяжитесь со мной сегодня и начните
                     ваш путь к здоровому и счастливому будущему.
                 </p>
-                <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/for-business#appointment')}}>Записаться на консультацию</Button>
+                <Button className={cls.button} theme={ButtonTheme.BLUE}  onClick={()=>{navigate('/#appointment')}}>Записаться на консультацию</Button>
             </div>
             <div className={cls.block}>
                 <img src={Image} alt="" className={cls.img} />

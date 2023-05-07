@@ -50,7 +50,7 @@ export interface IClient{
 }
 
 export interface IAppointment {
-    discussion_theme: number | undefined;
+    discussion_themes: number[] | null;
     time_slot: number;
     client: IClient;
 }

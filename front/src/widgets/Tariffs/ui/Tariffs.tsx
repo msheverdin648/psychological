@@ -28,7 +28,7 @@ export const Tariffs: React.FC<TariffsProps> = (props) => {
                             ))
                         }
                     </div>
-                    <Button theme={ButtonTheme.GREEN} onClick={()=>{navigate('/for-business#appointment')}}>
+                    <Button theme={ButtonTheme.GREEN} onClick={()=>{navigate('/#appointment')}}>
                         Записаться на консультацию
                     </Button>
                     <span className={cls.text}><ClockIcon className={cls.icon} /> Время одной сессии – 45 минут</span>
