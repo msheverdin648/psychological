@@ -19,13 +19,13 @@ export const QuestionForm: React.FC<QuestionFormProps> = (props) => {
 
     const [messenger, setMessenger] = useState('Telegram')
 
-    const { control, handleSubmit, formState: {errors} } = useForm();
+    const { control, handleSubmit, formState: {errors}, reset } = useForm();
 
     const { url } = useGetUrl('contact-psychologist')
 
     function sendFormHandler(data: any){
         sendForm(data, url)
-
+        reset()
     }
 
     const emailRegEx = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g
