@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AboutPage.module.scss';
 import Avatar from 'shared/assets/img/avatar.png'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { useNavigate } from 'react-router-dom';
 
 interface AboutPageProps {
     className?: string;
@@ -9,6 +10,9 @@ interface AboutPageProps {
 
 export const AboutPage: React.FC<AboutPageProps> = (props) => {
     const { className } = props;
+
+    const navigate = useNavigate()
+    
 
     return (
         <div className={classNames(cls.aboutPage, {}, [className ?? '' ])}>
@@ -18,7 +22,7 @@ export const AboutPage: React.FC<AboutPageProps> = (props) => {
                         <img src={Avatar} alt="" className={cls.img} />
                         <span className={cls.name}>Людмила Николаева</span>
                         <span className={cls.position}>Психоаналитически<br/>ориентированный<br/>психотерапевт</span>
-                        <Button theme={ButtonTheme.BLUE} >Записаться на консультацию</Button>
+                        <Button theme={ButtonTheme.BLUE} onClick={()=>{navigate('/#appointment')}} >Записаться на консультацию</Button>
                     </div>
                     <div className={classNames(cls.block, {}, [cls.secondBlock])}>
                         <p className={cls.description}>

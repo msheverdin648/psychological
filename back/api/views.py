@@ -101,7 +101,7 @@ class CompanyFormView(generics.CreateAPIView):
                 f'Новая заявка на индивидуальное предложение для компании от {name}',
                 f'Имя: {name},\nEmail: {email},\nТелефон: {phone},\nКомпания: {company_name},\nРазмер компании: {company_size}',
                 'info@nikolaevaly.ru',
-                ['info@nikolaevaly.ru', 'nikolaevaly@mail.ru'],
+                ['info@nikolaevaly.ru', 'nikolaevaly@mail.ru', 'msheverdin648@gmail.com'],
                 fail_silently=False,
             )
 
@@ -141,7 +141,7 @@ class QuestionView(generics.CreateAPIView):
                 'Новый вопрос от пользователя',
                 f'''Имя: {name},\n{messenger}: {messenger_contact},\nВопрос: {question}''',
                 'info@nikolaevaly.ru',
-                ['info@nikolaevaly.ru', 'nikolaevaly@mail.ru'],
+                ['info@nikolaevaly.ru', 'nikolaevaly@mail.ru', 'msheverdin648@gmail.com'],
                 fail_silently=False,
             )
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -174,7 +174,7 @@ class CertificateRequestView(generics.CreateAPIView):
                 'Запрос на сертификат',
                 f'''Имя: {name},\nEmail: {email},\nТелефон: {phone}''',
                 'info@nikolaevaly.ru',
-                ['info@nikolaevaly.ru', 'nikolaevaly@mail.ru'],
+                ['info@nikolaevaly.ru', 'nikolaevaly@mail.ru', 'msheverdin648@gmail.com'],
                 fail_silently=False,
             )
             return Response(serializer.data, status=status.HTTP_201_CREATED)

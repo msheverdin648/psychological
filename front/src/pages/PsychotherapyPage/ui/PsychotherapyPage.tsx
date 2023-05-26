@@ -63,7 +63,7 @@ const PsychotherapyPage: React.FC<PsychotherapyPageProps> = (props) => {
     const secondCircleCards = [
         {
             id: 1,
-            icon: "💑",
+            icon: "👫",
             text: 'Трудности в отношениях',
             icon_position: iconPosition.RIGHT
         },
