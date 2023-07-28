@@ -24,14 +24,16 @@ export const BuisnesDescriptionBlock: React.FC<BuisnesDescriptionBlockProps> = (
                 icon: <p className={cls.icon}>🧍</p>,
                 title: 'По вашему запросу подбираем индивидуальный вариант сотрудничества.',
             },
-            theme: DescriptionCardThemes.BORDERED_BLUE,
+            cardTheme: DescriptionCardThemes.BORDERED_BLUE,
+            iconTheme: DescriptionCardThemes.BORDERED_BLUE,
         },
         {
             card: {
                 icon: <p className={cls.icon}>🌍</p>,
                 title: 'Доступность из любой точки мира, консультирование может проводиться как очно, так и он-лайн',
             },
-            theme: DescriptionCardThemes.BORDERED_BLUE,
+            cardTheme: DescriptionCardThemes.BORDERED_BLUE,
+            iconTheme: DescriptionCardThemes.BORDERED_BLUE,
         },
     ])
 
@@ -42,8 +44,8 @@ export const BuisnesDescriptionBlock: React.FC<BuisnesDescriptionBlockProps> = (
             <div className="container">
                 <div className={cls.content}>
                     <h2 className={cls.title}>
-                Мы помогаем повышать
-                продуктивность сотрудников!
+                Мы помогаем <span className={'colored-text'}>повышать
+                продуктивность</span> сотрудников!
                     </h2>
                     <p className={cls.text}>
                 Психоаналитическое бизнес-консультирование создаёт
@@ -51,8 +53,8 @@ export const BuisnesDescriptionBlock: React.FC<BuisnesDescriptionBlockProps> = (
                     </p>
                     <div className={cls.cards}>
                         {
-                            cards.map(({card, theme}, index)=>(
-                                <DescriptionCard className={cls.card} card={card} theme={theme} key={`buisnesCard_${index}`}/>
+                            cards.map(({card, cardTheme}, index)=>(
+                                <DescriptionCard className={cls.card} card={card} cardTheme={cardTheme} key={`buisnesCard_${index}`}/>
                             ))
                         }
                     </div>

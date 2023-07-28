@@ -18,7 +18,6 @@ export const QuestionForm: React.FC<QuestionFormProps> = (props) => {
     const { className } = props;
 
     const [messenger, setMessenger] = useState('Telegram')
-
     const { control, handleSubmit, formState: {errors}, reset } = useForm();
 
     const { url } = useGetUrl('contact-psychologist')

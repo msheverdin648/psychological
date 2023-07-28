@@ -27,3 +27,28 @@
 .img {
     width: 400px;
 }
+
+
+@media screen and (max-width: 1060px) {
+
+    .onlineService {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .column {
+        order: 1;
+        flex: 1 1 auto;
+    }
+
+    .block {
+        display: flex;
+        order: 0;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .button {
+        margin: auto auto;
+    }
+
+}

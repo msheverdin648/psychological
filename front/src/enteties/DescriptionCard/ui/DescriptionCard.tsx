@@ -6,7 +6,8 @@ import cls from './DescriptionCard.module.scss';
 
 interface DescriptionCardProps {
     className?: string;
-    theme?: string;
+    cardTheme?: string;
+    iconTheme?: string;
     card: IDescriptionCard;
 }
 
@@ -21,20 +22,21 @@ export const enum DescriptionCardThemes {
 export const DescriptionCard: React.FC<DescriptionCardProps> = (props) => {
     const { 
         className, 
-        theme = DescriptionCardThemes.FILL,
+        cardTheme = DescriptionCardThemes.FILL,
+        iconTheme = cardTheme,
         card
     } = props;
 
     return (
-        <div className={classNames(cls.descriptionCard, {}, [className ?? '', cls[theme] ])}>
-            <div className={classNames(cls.icon, {}, [className ?? '', cls[theme]])}>
+        <div className={classNames(cls.descriptionCard, {}, [className ?? '', cls[cardTheme] ])}>
+            <div className={classNames(cls.icon, {}, [className ?? '', cls[iconTheme]])}>
                 {card.icon}
             </div>
             {
-                card.title && <h3 className={classNames(cls.title, {}, [className ?? '', cls[theme]])}>{card.title}</h3>
+                card.title && <h3 className={classNames(cls.title, {}, [className ?? '', cls[cardTheme]])}>{card.title}</h3>
             }
             {
-                card.text && <p className={classNames(cls.text, {}, [className ?? '', cls[theme]])}>{card.text}</p>
+                card.text && <p className={classNames(cls.text, {}, [className ?? '', cls[cardTheme]])}>{card.text}</p>
             }
         </div>
     );

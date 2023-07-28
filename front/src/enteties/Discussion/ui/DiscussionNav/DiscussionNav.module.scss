@@ -15,14 +15,14 @@
 
 
 .arrow {
-    fill: var(--color-green);
+    fill: var(--main-color);
     cursor: pointer;
     width: 50px;
     height: 50px;
 }
 
 .arrow:not(.unactive):hover {
-    fill: darken(#2cbb77, 4);
+    fill: var(--main-active-color);
 }
 
 .pages {
@@ -43,7 +43,7 @@
 }
 
 .unactive{
-    fill: var(--color-green);
+    fill: var(--main-color);
     opacity: 0.4;
 }
 
@@ -57,7 +57,7 @@
     font: var(--font-l);
     font-size: 30px;
     font-weight: 500;
-    color: var(--color-blue);
+    color: var(--main-color);
     text-align: center;
 }
 

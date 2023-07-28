@@ -11,5 +11,7 @@ export interface IDescriptionCard {
 export interface IDescriptionState{
 
     card: IDescriptionCard;
-    theme: DescriptionCardThemes;    
+    cardTheme: DescriptionCardThemes;    
+    iconTheme: DescriptionCardThemes;
+
 }

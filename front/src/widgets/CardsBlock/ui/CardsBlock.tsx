@@ -27,7 +27,8 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
                 text: 'Он свободно создает продукты, гордясь своим вкладом (или результатом).',
                 title: 'Сотрудник, получающий поддержку, более эффективен.',
             },
-            theme: DescriptionCardThemes.FILL,
+            cardTheme: DescriptionCardThemes.FILL,
+            iconTheme: DescriptionCardThemes.BORDERED,
         },
         {
             card: {
@@ -35,7 +36,9 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
                 text: 'Эмоциональное состояние сотрудников улучшается.',
                 title: 'Сокращается уровень конфликтов внутри команды.',
             },
-            theme: DescriptionCardThemes.BORDERED,
+            cardTheme: DescriptionCardThemes.CLEAR,
+            iconTheme: DescriptionCardThemes.BORDERED,
+            
         },
         {
             card: {
@@ -43,7 +46,9 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
                 text: 'Они не боятся говорить о своих желаниях и карьерном росте.',
                 title: 'Такие сотрудники увольняются на 45% реже.',
             },
-            theme: DescriptionCardThemes.FILL,
+            cardTheme: DescriptionCardThemes.FILL,
+            iconTheme: DescriptionCardThemes.BORDERED,
+
         },
         {
             card: {
@@ -51,7 +56,9 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
                 text: 'Наши психологи имеют полный нейтралитет.',
                 title: 'Всё абсолютно конфиденциально!',
             },
-            theme: DescriptionCardThemes.BORDERED,
+            cardTheme: DescriptionCardThemes.CLEAR,
+            iconTheme: DescriptionCardThemes.BORDERED,
+
         },
         {
             card: {
@@ -59,7 +66,9 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
                 text: 'Срок адаптации сотрудника в коллективе происходит на 40% быстрее.',
                 title: 'Сокращается срок адаптации нового сотрудника.',
             },
-            theme: DescriptionCardThemes.FILL,
+            cardTheme: DescriptionCardThemes.FILL,
+            iconTheme: DescriptionCardThemes.BORDERED,
+
         },
         {
             card: {
@@ -67,7 +76,9 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
                 text: 'Чувство тревоги у работников снижается на 50%.',
                 title: 'Снижается чувство тревоги и стресса.',
             },
-            theme: DescriptionCardThemes.BORDERED,
+            cardTheme: DescriptionCardThemes.CLEAR,
+            iconTheme: DescriptionCardThemes.BORDERED,
+
         },
         {
             card: {
@@ -75,7 +86,9 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
                 text: 'Это не делит офис на 2 лагеря и сохраняет личную информацию.',
                 title: 'Никто из сотрудников не знает, кто посещает платформу.',
             },
-            theme: DescriptionCardThemes.FILL,
+            cardTheme: DescriptionCardThemes.FILL,
+            iconTheme: DescriptionCardThemes.BORDERED,
+
         },
     ])
 
@@ -84,12 +97,18 @@ export const CardsBlock: React.FC<CardsBlockProps> = (props) => {
             <div className="container">
                 <div className={cls.content}>
                     <h2 className={cls.title}>
-                        Почему нужно работать с нами ✨
+                        Почему нужно <span className='colored-text' >работать с нами</span> ✨
                     </h2>
                     <div className={cls.block}>
                         {
-                            cards.map(({card, theme}, index)=>(
-                                <DescriptionCard className={cls.card} card={card} theme={theme} key={`descriptionCard_${index}`} />
+                            cards.map(({card, cardTheme, iconTheme}, index)=>(
+                                <DescriptionCard 
+                                    className={cls.card} 
+                                    card={card} 
+                                    cardTheme={cardTheme} 
+                                    iconTheme={iconTheme} 
+                                    key={`descriptionCard_${index}`} 
+                                />
                             ))
                         }
                     </div>

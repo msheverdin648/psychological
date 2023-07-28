@@ -56,7 +56,7 @@ export const RegularSessionsBlock: React.FC<RegularSessionsBlockProps> = (props)
                     <div className={cls.cards}>
                         {
                             cards.map((card, index)=>(
-                                <DescriptionCard className={cls.card} card={ card } key={`regularSessionsBlockCard_${index}`} theme={DescriptionCardThemes.CLEAR}/>
+                                <DescriptionCard className={cls.card} card={ card } key={`regularSessionsBlockCard_${index}`} cardTheme={DescriptionCardThemes.CLEAR}/>
                             ))
                         }
                     </div>

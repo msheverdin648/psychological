@@ -10,15 +10,19 @@
     flex: 0 0 20%;
 }
 
-.fill, .fill_without_icon {
+.descriptionCard.fill {
+    background: #fff;
+}
+
+.fill_without_icon {
     background: #fff;
 }
 
 .descriptionCard.bordered {
-    border: 1px solid #fff;
+    border: 1px solid var(--main-color);
 }
 .descriptionCard.bordered_blue {
-    border: 1px solid var(--color-blue);
+    border: 1px solid var(--main-color);
 }
 
 .icon.fill svg {
@@ -26,17 +30,17 @@
 }
 
 .icon.fill {
-    background: var(--color-blue);
+    background: var(--main-color);
 }
 
 .icon.bordered svg {
-    fill: #fff;
+    fill: var(--main-color);
     background: none;
 }
 
 .icon.bordered {
-    fill: var(--color-blue);
-    background: #fff;
+    fill: var(--main-color);
+    border: 1px solid var(--main-color);
 }
 .icon.bordered_blue {
     background: #fff;
@@ -63,7 +67,7 @@
 
 .title.bordered,
 .text.bordered {
-    color: #fff
+    color: #000
 }
 
 .title.bordered_blue,

@@ -19,7 +19,8 @@ export const CheckBlock: React.FC<CheckBlockProps> = (props) => {
                 title: 'Оплата консультаций',
                 text: 'Оплата вносится до начала сессии',
             },
-            theme: DescriptionCardThemes.CLEAR,
+            cardTheme: DescriptionCardThemes.CLEAR,
+            iconTheme: DescriptionCardThemes.CLEAR,
         },
         {
             card: {
@@ -28,7 +29,8 @@ export const CheckBlock: React.FC<CheckBlockProps> = (props) => {
                 text: 'Детальная информация об активности всех сотрудников (количество проведенных сессий, дата следующей сессии, статус активности)',
 
             },
-            theme: DescriptionCardThemes.CLEAR,
+            cardTheme: DescriptionCardThemes.CLEAR,
+            iconTheme: DescriptionCardThemes.CLEAR,
         },
         {
             card: {
@@ -37,7 +39,8 @@ export const CheckBlock: React.FC<CheckBlockProps> = (props) => {
                 text: 'Вы платите только за ваших сотрудников',
 
             },
-            theme: DescriptionCardThemes.CLEAR,
+            cardTheme: DescriptionCardThemes.CLEAR,
+            iconTheme: DescriptionCardThemes.CLEAR,
         },
     ])
 
@@ -47,12 +50,12 @@ export const CheckBlock: React.FC<CheckBlockProps> = (props) => {
             <div className="container">
                 <div className={cls.content}>
                     <h2 className={cls.title}>
-                            С нами классно работать
+                            С нами <span className={'colored-text'}>классно работать</span>
                     </h2>
                     <div className={cls.block}>
                         {
-                            cards.map(({card, theme}, index)=>(
-                                <DescriptionCard card={card} theme={theme} key={`checkBlockCard_${index}`} />
+                            cards.map(({card, cardTheme}, index)=>(
+                                <DescriptionCard card={card} cardTheme={cardTheme} key={`checkBlockCard_${index}`} />
                             ))
                         }
                     </div>

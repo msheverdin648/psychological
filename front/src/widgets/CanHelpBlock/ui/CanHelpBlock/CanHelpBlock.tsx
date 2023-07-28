@@ -94,7 +94,7 @@ export const CanHelpBlock: React.FC<CanHelpBlockProps> = (props) => {
             <div className="container">
                 <div className={cls.content}>
 
-                    <h2 className={cls.title}>Чем можем помочь... </h2>
+                    <h2 className={cls.title}>Чем можем <span className={'colored-text'}>помочь...</span> </h2>
                     <div className={cls.circles}>
                         <div className={classNames(cls.circle, {}, [cls.firstCircle])}>
                             {

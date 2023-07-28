@@ -45,6 +45,10 @@
 
 }
 
+.colored {
+    color: var(--main-color);
+}
+
 @media screen and (max-width: 1239px) {
     .cards {
         margin-top: 0;

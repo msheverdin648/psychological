@@ -19,21 +19,26 @@ export const ChangeNowBlock: React.FC<ChangeNowBlockProps> = (props) => {
                 icon: <p className={cls.icon}>🛋</p>,
                 title: 'Запишитесь на первую сессию',
             },
-            theme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+            cardTheme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+            iconTheme: DescriptionCardThemes.FILL_WITHOUT_ICON,
         },
         {
             card: {
                 icon: <p className={cls.icon}>🧠</p>,
                 title: 'Проработайте ваши конфликты',
             },
-            theme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+            cardTheme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+            iconTheme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+
         },
         {
             card: {
                 icon: <p className={cls.icon}>⛅</p>,
                 title: 'Начните замечать, как меняется ваше настоящее',
             },
-            theme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+            cardTheme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+            iconTheme: DescriptionCardThemes.FILL_WITHOUT_ICON,
+
         },
     ])
 
@@ -48,8 +53,8 @@ export const ChangeNowBlock: React.FC<ChangeNowBlockProps> = (props) => {
                     </h2>
                     <div className={cls.cards}>
                         {
-                            cards.map(({card, theme}, index)=>(
-                                <DescriptionCard card={card} theme={theme} className={cls.card} key={`changeNowBlockCard_${index}`} />
+                            cards.map(({card, cardTheme}, index)=>(
+                                <DescriptionCard card={card} cardTheme={cardTheme} className={cls.card} key={`changeNowBlockCard_${index}`} />
                             ))
                         }
                     </div>

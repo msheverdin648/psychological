@@ -1,5 +1,5 @@
 .cardsBlock {
-    background: var(--color-blue);
+    background: url('../../../shared/assets/img/cards-block-bg.jpg') center no-repeat;
     padding: 86px 0 114px 0;
 }
 
@@ -23,7 +23,7 @@
     font: var(--font-xl);
     font-weight: 700;
     margin-bottom: 67px;
-    color: #fff;
+    color: #000;
 }
 
 @media screen and (max-width: 1239px) {
